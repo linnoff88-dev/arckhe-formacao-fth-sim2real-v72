@@ -63,7 +63,7 @@ Legenda da coluna "curso diz agora": **fato** (fonte primária ou medido), **rel
 
 | fonte antiga | o que dizia | o que o curso diz agora | fonte (URL/data) |
 |---|---|---|---|
-| real2sim README | foto → cena → gêmeo MuJoCo com o Franka Panda; MuJoCo 3.15; medido em 14/10/2026 | roda o passo **sem modelo** (`r2s.py ver`, cena de exemplo) no venv do curso com MuJoCo 3.16.0; foto → cena (que chama modelo de visão) só mostrado; dono do assunto é o robotica-real2sim (link) | https://inematds.github.io/robotica-real2sim/guia/ · medido |
+| real2sim README | foto → cena → gêmeo MuJoCo com o Franka Panda; MuJoCo 3.15; medido em 14/10/2026 | roda o passo **sem modelo** (`r2s.py ver`, cena de exemplo) no venv do curso com MuJoCo 3.16.0; foto → cena (que chama modelo de visão) só mostrado; dono do assunto é o robotica-real2sim (link) | https://linnoff88-dev.github.io/ · medido |
 | real2sim HUMANOIDES.md §1 | GR00T N1 +40 % com dados sintéticos, 780 mil trajetórias em 11 h (NVIDIA, 03/2025) | **fora** (é VLA/dados: dono vla-v72); no máximo link | — |
 | real2sim HUMANOIDES.md §3 | "1.620×" no treino do G1 no Isaac Lab, 4.096 ambientes | **fora** como número (o próprio doc diz que é conta derivada e muda com a versão); locomoção em GPU é do curso 1 | — |
 | — (ausente) | — | Gaussian splatting para humanoide: Niantic Spatial + Flexion + NVIDIA e GaussGym — **relatado**, demo de fornecedor, sem sim-to-real medido em paper | PE §4 [2ª] |
@@ -75,7 +75,7 @@ Legenda da coluna "curso diz agora": **fato** (fonte primária ou medido), **rel
 | FTH 4.2 §4.3 | níveis 0–4 (sim limpa → leve → agressiva → parâmetros identificados → robô real) | escada de 4 degraus com critério de passagem cada: sim (com randomização) → sim2sim (outro motor/modelo + caminho de mensagens do robô) → suspenso (pórtico/elástico) → chão; o fluxo do unitree_rl_lab usa elástico/suspensão antes de soltar o robô | PE §6.1 [FATO] |
 | FTH 4.2 §4.2 | checklist (3×3 m, colchões, e-stop < 2 m, torque 50 %, watchdog 100 ms, óculos) | **fora** como procedimento (dono: curso 4, aula 1); aqui só a menção de que a escada exige critério de parada | CURRICULO |
 | FTH 4.2 §5.3–5.4 | Prometheus/Grafana, OTA | **fora** (operação: curso 4) | — |
-| FTH 4.2 (geral) | "Live semanal", fórum, `discord.gg/fth-nivel4` | **fora** (link inventado; INEMA é aberto e gratuito) | AUDITORIA |
+| FTH 4.2 (geral) | "Live semanal", fórum, `discord.gg/fth-nivel4` | **fora** (link inventado; ARCKHÉ é aberto e gratuito) | AUDITORIA |
 | FTH 4.2 (refs.) | papers 2017–2022 (OpenAI dynamics randomization; Google quadruped 2018; NVIDIA "Learning to Walk in Minutes", 2022) | este último fica como referência histórica do PPO paralelo (é o paper do legged_gym, legado); os vídeos de terceiros ("Lex Fridman", "Two Minute Papers") **saem** | AUDITORIA; regra "não citar curso/vídeo de terceiros" |
 
 ## Ficou de fora por falta de fonte

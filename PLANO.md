@@ -51,8 +51,8 @@ Saídas de erro comum capturadas: `e1-sem-politica` (1), `e3-so-kp` (3: só kp, 
 `simfila` na aula 8: os 4 degraus da escada como fila (sim → sim2sim → suspenso → chão), com a falha proposital no degrau "suspenso" na primeira vez e a volta ao degrau anterior.
 
 ## Links fixos
-- Curso anterior: https://inematds.github.io/formacao-fth-locomocao-v72/ (em construção em paralelo em 19/10/2026 — 404 esperado no `validar --links`).
-- Curso seguinte (aula 8, `links`): https://inematds.github.io/formacao-fth-corpo-inteiro-v72/ (ainda não publicado — 404 esperado).
+- Curso anterior: https://linnoff88-dev.github.io/ (em construção em paralelo em 19/10/2026 — 404 esperado no `validar --links`).
+- Curso seguinte (aula 8, `links`): https://linnoff88-dev.github.io/ (ainda não publicado — 404 esperado).
 - Donos externos: vla-v72 aula 6 (avaliação em sim, reality gap), aula 8 (normas); robotica-real2sim (real-to-sim com braço); curso 4 da FTH (operar: SDK, ROS 2, segurança).
 
 Determinismo conferido em 19/10/2026: duas capturas completas seguidas (`kit/capturar.sh`, 25 blocos) → `diff -r` com uma única diferença, a etapa 3 do portão (DDS em tempo real: "andou 5.2 m" × "5.3 m"), já declarada como variável.

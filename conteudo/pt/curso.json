@@ -1,12 +1,12 @@
 {
   "id": "formacao-fth-sim2real-v72",
   "lang": "pt-BR",
-  "url": "https://inematds.github.io/formacao-fth-sim2real-v72/",
+  "url": "https://linnoff88-dev.github.io/
   "nome": "FTH 2 · Do simulador ao chão",
   "sub": "Sim-to-real em humanoides",
   "volta": {
-    "t": "INEMA.CLUB",
-    "href": "https://inema.club/"
+    "t": "ARCKHÉ AI",
+    "href": "https://ARCKHÉ AI/"
   },
   "lado_card": {
     "rot": "A política das práticas",
@@ -15,15 +15,15 @@
     "link": "Abrir o unitree_rl_lab",
     "href": "https://github.com/unitreerobotics/unitree_rl_lab"
   },
-  "rodape": "INEMA.CLUB · conteúdo aberto e gratuito · formato INEMA Learning v7.2 · FTH — Formação Tecnológica em Humanoides, curso 2 de 5 · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://github.com/inematds/formacao-fth-sim2real-v72\">kit do curso no GitHub</a>",
+  "rodape": "ARCKHÉ AI · conteúdo aberto e gratuito · formato ARCKHÉ Learning v7.2 · FTH — Formação Tecnológica em Humanoides, curso 2 de 5 · <a href=\"https://ARCKHÉ AI/\">ARCKHÉ AI</a> · <a href=\"https://github.com/linnoff88-dev/formacao-fth-sim2real-v72\">kit do curso no GitHub</a>",
   "videos": {
     "real2sim": {
       "titulo": "Gêmeo MuJoCo da mesa: o braço pega o cubo (clipe do robotica-real2sim)",
       "duracao": "0:10",
-      "mp4": "https://github.com/inematds/formacao-fth-sim2real-v72/releases/download/videos-v1/real2sim-pegar-cubo.mp4",
+      "mp4": "https://github.com/linnoff88-dev/formacao-fth-sim2real-v72/releases/download/videos-v1/real2sim-pegar-cubo.mp4",
       "poster": "assets/video/real2sim-poster.jpg",
       "vtt": "assets/video/real2sim.vtt",
-      "pagina": "https://inematds.github.io/robotica-real2sim/guia/"
+      "pagina": "https://linnoff88-dev.github.io/
     }
   },
   "inicio": {
@@ -33,7 +33,7 @@
     "cta": "Começar pela aula 1",
     "cta2": {
       "t": "Ver o kit no GitHub",
-      "href": "https://github.com/inematds/formacao-fth-sim2real-v72"
+      "href": "https://github.com/linnoff88-dev/formacao-fth-sim2real-v72"
     },
     "capa_alt": "Robô humanoide industrial de pé no chão de um laboratório escuro, preso a um pórtico por um cabo frouxo, com um monitor de simulação ao fundo e o título Do simulador ao chão.",
     "numeros": [
