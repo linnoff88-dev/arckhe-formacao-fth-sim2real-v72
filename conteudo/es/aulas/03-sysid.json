@@ -194,11 +194,11 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posição e velocidade de 4 juntas)\nresíduo, modelo nominal:       0.034\nresíduo, modelo identificado:  0.014\nerro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.14° (RMS)\nkp         nominal   1.00 → identificado   0.57\nkd         nominal   1.00 → identificado   1.08\nkp         escondido   0.60 · dentro de ±10 %: sim\nkd         escondido   1.00 · dentro de ±10 %: sim\nsaída: 0</pre><p>El kp vuelve cerca de 0,6 (el motor entrega el 60 % de la ganancia enviada) y el kd queda cerca de 1,0, porque el \"real\" no tocó el kd. El error de las posiciones cae a menos de la mitad.</p>"
+            "html": "<pre>log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posiçêo e velocidade de 4 juntas)\nresíduo, modelo nominal:       0.034\nresíduo, modelo identificado:  0.014\nerro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.14° (RMS)\nkp         nominal   1.00 → identificado   0.57\nkd         nominal   1.00 → identificado   1.08\nkp         escondido   0.60 · dentro de ±10 %: sim\nkd         escondido   1.00 · dentro de ±10 %: sim\nsaída: 0</pre><p>El kp vuelve cerca de 0,6 (el motor entrega el 60 % de la ganancia enviada) y el kd queda cerca de 1,0, porque el \"real\" no tocó el kd. El error de las posiciones cae a menos de la mitad.</p>"
           },
           {
             "rot": "Error común: identificar solo el kp",
-            "html": "<pre>erro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.55° (RMS)\nkp         nominal   1.00 → identificado   0.52\nkp         escondido   0.60 · dentro de ±10 %: não\nsaída: 1</pre><p>Con un solo parámetro, el optimizador pone en el kp todo lo que el modelo no explica, incluido el retardo de 20 ms que la clase 4 mide. El parámetro que falta en el modelo se filtra a los otros: dale al ajuste los grados de libertad que el ensayo excita.</p>"
+            "html": "<pre>erro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.55° (RMS)\nkp         nominal   1.00 → identificado   0.52\nkp         escondido   0.60 · dentro de ±10 %: nêo\nsaída: 1</pre><p>Con un solo parámetro, el optimizador pone en el kp todo lo que el modelo no explica, incluido el retardo de 20 ms que la clase 4 mide. El parámetro que falta en el modelo se filtra a los otros: dale al ajuste los grados de libertad que el ensayo excita.</p>"
           },
           {
             "rot": "Ensayo en sim",

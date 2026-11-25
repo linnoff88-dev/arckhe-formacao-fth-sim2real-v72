@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""sysid.py — identificação de sistema: ajusta o modelo do MuJoCo até ele reproduzir o ensaio de bancada.
+"""sysid.py — identificaçêo de sistema: ajusta o modelo do MuJoCo até ele reproduzir o ensaio de bancada.
 
 Uso: python3 kit/sysid.py log.npz [--parametros kp,kd|kp] [--revelar]
 Usa o toolbox mujoco.sysid (MuJoCo 3.5+; aqui 3.16.0, pip install "mujoco[sysid]==3.16.0"): parte do modelo
 nominal (kp = 1,0 × o do deploy.yaml, sem atraso), simula o mesmo comando do log e minimiza a diferença entre os
-encoders simulados e os medidos (mínimos quadrados não lineares).
+encoders simulados e os medidos (mínimos quadrados nêo lineares).
 --revelar abre kit/mundos/real.json no fim e compara com o valor escondido.
 """
 import argparse
@@ -61,10 +61,10 @@ def main():
     ms = sysid.ModelSequences("g1_bancada", spec, "varredura", est, ctrl_ts, sen_ts)
     res = sysid.build_residual_fn(models_sequences=[ms], n_threads=1)
     r0 = np.concatenate(res(params.as_vector(), params)[0])
-    with contextlib.redirect_stdout(io.StringIO()):  # o otimizador imprime cada iteração
+    with contextlib.redirect_stdout(io.StringIO()):  # o otimizador imprime cada iteraçêo
         opt, out = sysid.optimize(initial_params=params, residual_fn=res, optimizer="mujoco", verbose=False)
     r1 = np.concatenate(res(opt.as_vector(), opt)[0])
-    print(f"log: {a.log} · {len(L['t'])} amostras · sinais: {len(nomes)} (posição e velocidade de {len(nomes) // 2} juntas)")
+    print(f"log: {a.log} · {len(L['t'])} amostras · sinais: {len(nomes)} (posiçêo e velocidade de {len(nomes) // 2} juntas)")
     print(f"resíduo, modelo nominal:      {np.sqrt(np.mean(r0 ** 2)):6.3f}")
     print(f"resíduo, modelo identificado: {np.sqrt(np.mean(r1 ** 2)):6.3f}")
     ident = {n: float(opt[n].value[0]) for n in escolhidos}
@@ -80,7 +80,7 @@ def main():
             v = float(opt[nome].value[0])
             dentro = abs(v - esc) <= 0.1 * abs(esc) if esc else abs(v) < 2.0
             ok &= dentro
-            print(f"{nome:<10} escondido {esc:6.2f} · dentro de ±10 %: {'sim' if dentro else 'não'}")
+            print(f"{nome:<10} escondido {esc:6.2f} · dentro de ±10 %: {'sim' if dentro else 'nêo'}")
         return 0 if ok else 1
     return 0
 

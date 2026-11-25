@@ -194,11 +194,11 @@
         "abas": [
           {
             "rot": "Captured output (10/19/2026)",
-            "html": "<pre>log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posição e velocidade de 4 juntas)\nresíduo, modelo nominal:       0.034\nresíduo, modelo identificado:  0.014\nerro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.14° (RMS)\nkp         nominal   1.00 → identificado   0.57\nkd         nominal   1.00 → identificado   1.08\nkp         escondido   0.60 · dentro de ±10 %: sim\nkd         escondido   1.00 · dentro de ±10 %: sim\nsaída: 0</pre><p>kp comes back near 0.6 (the motor delivers 60% of the commanded gain) and kd stays near 1.0, because the \"real\" robot did not touch kd. The position error drops to less than half.</p>"
+            "html": "<pre>log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posiçêo e velocidade de 4 juntas)\nresíduo, modelo nominal:       0.034\nresíduo, modelo identificado:  0.014\nerro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.14° (RMS)\nkp         nominal   1.00 → identificado   0.57\nkd         nominal   1.00 → identificado   1.08\nkp         escondido   0.60 · dentro de ±10 %: sim\nkd         escondido   1.00 · dentro de ±10 %: sim\nsaída: 0</pre><p>kp comes back near 0.6 (the motor delivers 60% of the commanded gain) and kd stays near 1.0, because the \"real\" robot did not touch kd. The position error drops to less than half.</p>"
           },
           {
             "rot": "Common mistake: identifying only kp",
-            "html": "<pre>erro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.55° (RMS)\nkp         nominal   1.00 → identificado   0.52\nkp         escondido   0.60 · dentro de ±10 %: não\nsaída: 1</pre><p>With a single parameter, the optimizer dumps everything the model doesn't explain onto kp, including the 20 ms latency that lesson 4 measures. A parameter missing from the model leaks into the others: give the fit the degrees of freedom the test excites.</p>"
+            "html": "<pre>erro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.55° (RMS)\nkp         nominal   1.00 → identificado   0.52\nkp         escondido   0.60 · dentro de ±10 %: nêo\nsaída: 1</pre><p>With a single parameter, the optimizer dumps everything the model doesn't explain onto kp, including the 20 ms latency that lesson 4 measures. A parameter missing from the model leaks into the others: give the fit the degrees of freedom the test excites.</p>"
           },
           {
             "rot": "Test in the sim",

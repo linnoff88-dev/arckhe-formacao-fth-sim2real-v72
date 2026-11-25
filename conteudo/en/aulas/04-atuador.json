@@ -177,7 +177,7 @@
         "abas": [
           {
             "rot": "Captured output (10/19/2026)",
-            "html": "<pre>política: unitree_rl_lab G1 29 GDL velocity v0 (ONNX, 480 entradas) · comando 0.50 m/s · 10 s\nsim                          queda: não · andou 5.1 m em 10 s (vel. 0.51 m/s; pedida 0.50)\nreal simulado                queda: não · andou 4.5 m em 10 s (vel. 0.45 m/s; pedida 0.50)\nsaída: 0</pre><p>The \"simulated real\" now walks 4.5 m and doesn't fall (exit 0). The sim, with the stiffer kp, keeps walking. The latency, the mass, and the friction are still there: the policy handles it, because the biggest difference was corrected.</p>"
+            "html": "<pre>política: unitree_rl_lab G1 29 GDL velocity v0 (ONNX, 480 entradas) · comando 0.50 m/s · 10 s\nsim                          queda: nêo · andou 5.1 m em 10 s (vel. 0.51 m/s; pedida 0.50)\nreal simulado                queda: nêo · andou 4.5 m em 10 s (vel. 0.45 m/s; pedida 0.50)\nsaída: 0</pre><p>The \"simulated real\" now walks 4.5 m and doesn't fall (exit 0). The sim, with the stiffer kp, keeps walking. The latency, the mass, and the friction are still there: the policy handles it, because the biggest difference was corrected.</p>"
           }
         ]
       }
@@ -206,7 +206,7 @@
           "titulo": "E3 · Compensate and walk",
           "min": "5 min",
           "texto": "Use the kp you identified in lesson 3 (1 divided by it) and run both worlds again.",
-          "pronto": "<code>python3 kit/dois_mundos.py --kp-comando 1.75; echo \"saída: $?\"</code> → <code>real simulado … queda: não</code> and <code>saída: 0</code>."
+          "pronto": "<code>python3 kit/dois_mundos.py --kp-comando 1.75; echo \"saída: $?\"</code> → <code>real simulado … queda: nêo</code> and <code>saída: 0</code>."
         }
       ]
     },

@@ -177,7 +177,7 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>política: unitree_rl_lab G1 29 GDL velocity v0 (ONNX, 480 entradas) · comando 0.50 m/s · 10 s\nsim                          queda: não · andou 5.1 m em 10 s (vel. 0.51 m/s; pedida 0.50)\nreal simulado                queda: não · andou 4.5 m em 10 s (vel. 0.45 m/s; pedida 0.50)\nsaída: 0</pre><p>El \"real simulado\" ahora camina 4,5 m y no se cae (salida 0). El sim, con el kp más duro, sigue caminando. El retardo, la masa y la fricción siguen ahí: la policy aguanta, porque se corrigió la mayor diferencia.</p>"
+            "html": "<pre>política: unitree_rl_lab G1 29 GDL velocity v0 (ONNX, 480 entradas) · comando 0.50 m/s · 10 s\nsim                          queda: nêo · andou 5.1 m em 10 s (vel. 0.51 m/s; pedida 0.50)\nreal simulado                queda: nêo · andou 4.5 m em 10 s (vel. 0.45 m/s; pedida 0.50)\nsaída: 0</pre><p>El \"real simulado\" ahora camina 4,5 m y no se cae (salida 0). El sim, con el kp más duro, sigue caminando. El retardo, la masa y la fricción siguen ahí: la policy aguanta, porque se corrigió la mayor diferencia.</p>"
           }
         ]
       }
@@ -206,7 +206,7 @@
           "titulo": "E3 · Compensar y caminar",
           "min": "5 min",
           "texto": "Usa el kp que identificaste en la clase 3 (1 dividido por él) y corre los dos mundos de nuevo.",
-          "pronto": "<code>python3 kit/dois_mundos.py --kp-comando 1.75; echo \"saída: $?\"</code> → <code>real simulado … queda: não</code> y <code>saída: 0</code>."
+          "pronto": "<code>python3 kit/dois_mundos.py --kp-comando 1.75; echo \"saída: $?\"</code> → <code>real simulado … queda: nêo</code> y <code>saída: 0</code>."
         }
       ]
     },

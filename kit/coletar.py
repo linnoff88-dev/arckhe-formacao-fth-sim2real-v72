@@ -28,7 +28,7 @@ def main():
     mujoco.mj_getState(m, d, est, mujoco.mjtState.mjSTATE_FULLPHYSICS)
     _, sen = rollout.rollout(m, d, est, ctrl[:-1])
     sen = np.squeeze(sen, 0)
-    nomes = [m.sensor(i).name for i in range(m.nsensor)]  # enc_* (posição) e vel_* (velocidade)
+    nomes = [m.sensor(i).name for i in range(m.nsensor)]  # enc_* (posiçêo) e vel_* (velocidade)
     rng = np.random.default_rng(3)
     ruido = np.array([0.002 if n.startswith("enc_") else 0.02 for n in nomes])  # rad e rad/s
     med = sen + rng.normal(0, 1, sen.shape) * ruido

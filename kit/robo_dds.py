@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""robo_dds.py — o "robô" do portão sim2sim: o G1 do unitree_mujoco com a ponte DDS da Unitree.
+"""robo_dds.py — o "robô" do portêo sim2sim: o G1 do unitree_mujoco com a ponte DDS da Unitree.
 
 Uso (o portao_sim2sim.py --dds abre sozinho): python3 kit/robo_dds.py --seg 12 --saida robo.json
 Publica rt/lowstate e escuta rt/lowcmd (domínio DDS 1, interface lo), como o robô de verdade faz na rede.
 Espera o primeiro comando antes de soltar a física, roda em tempo real e grava o resultado em JSON.
-Sem tela: não abre o visualizador.
+Sem tela: nêo abre o visualizador.
 """
 import argparse
 import json
@@ -27,7 +27,7 @@ def main():
     ap.add_argument("--passo", type=float, default=0.005)
     a = ap.parse_args()
     if not (UM / "simulate_python").exists():
-        sys.exit(f"ERRO: não achei {UM}. Rode a preparação da aula 6.")
+        sys.exit(f"ERRO: nêo achei {UM}. Rode a preparaçêo da aula 6.")
     sys.path.insert(0, str(UM / "simulate_python"))
     import config
     config.ROBOT, config.USE_JOYSTICK, config.ENABLE_ELASTIC_BAND = "g1", 0, False
@@ -68,7 +68,7 @@ def main():
                                for i in range(m.nu) if por_motor[i] / max(passos, 1) > 0.01}}
     json.dump(r, open(a.saida, "w"))
     del ponte
-    os._exit(0)  # as threads da ponte não terminam sozinhas
+    os._exit(0)  # as threads da ponte nêo terminam sozinhas
 
 
 if __name__ == "__main__":

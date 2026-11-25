@@ -144,7 +144,7 @@
         "abas": [
           {
             "rot": "Captured output (10/19/2026)",
-            "html": "<pre>log: ~/fth/log.npz · correção recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta\n  left_hip_pitch     a = -0.66  b = -0.013\n  left_hip_roll      a = -0.48  b = +0.006\n  left_knee          a = -0.66  b = +0.011\n  left_ankle_pitch   a = -0.71  b = +0.031\nerro de rastreio sim × real: antes 8.16° → depois 3.82° (RMS das posições)\nsaída: 0</pre><p>Before, the simulator misses the leg positions by 8.16° (RMS). With the correction, 3.82°. It exits 0 when the error drops.</p>"
+            "html": "<pre>log: ~/fth/log.npz · correçêo recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta\n  left_hip_pitch     a = -0.66  b = -0.013\n  left_hip_roll      a = -0.48  b = +0.006\n  left_knee          a = -0.66  b = +0.011\n  left_ankle_pitch   a = -0.71  b = +0.031\nerro de rastreio sim × real: antes 8.16° → depois 3.82° (RMS das posições)\nsaída: 0</pre><p>Before, the simulator misses the leg positions by 8.16° (RMS). With the correction, 3.82°. It exits 0 when the error drops.</p>"
           },
           {
             "rot": "Common mistake: one step at a time",

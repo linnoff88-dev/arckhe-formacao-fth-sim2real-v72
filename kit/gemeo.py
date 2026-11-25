@@ -20,7 +20,7 @@ def main():
     for o in objs:
         print(f"  {o.get('nome', '?'):<16} {o.get('forma', o.get('tipo', '?'))}")
     if not img.exists():
-        print(f"ERRO: {img} não existe")
+        print(f"ERRO: {img} nêo existe")
         return 1
     with open(img, "rb") as f:
         cab = f.read(24)

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""conferir_escada.py — confere a sua escada de implantação (aula 8).
+"""conferir_escada.py — confere a sua escada de implantaçêo (aula 8).
 
 Uso: python3 kit/conferir_escada.py escada.yaml
-Exige os 4 degraus na ordem sim → sim2sim → suspenso → chão, cada um com "onde", "criterio" e "parar_se"
+Exige os 4 degraus na ordem sim → sim2sim → suspenso → chêo, cada um com "onde", "criterio" e "parar_se"
 preenchidos; o critério tem de ter a forma "o que roda → o que tem de sair". Sai 0 quando passa.
 """
 import sys
 
 import yaml
 
-ORDEM = ["sim", "sim2sim", "suspenso", "chão"]
+ORDEM = ["sim", "sim2sim", "suspenso", "chêo"]
 CAMPOS = ["onde", "criterio", "parar_se"]
 
 

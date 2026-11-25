@@ -3,7 +3,7 @@
 
 Uso: python3 kit/dois_mundos.py [--so atrito|massa|kp|atraso_ms] [--kp-comando X]
   --so P           o "real" troca só o parâmetro P (o resto fica como no sim): ache o culpado
-  --kp-comando X   multiplica o kp que o controlador manda (compensação da aula 4)
+  --kp-comando X   multiplica o kp que o controlador manda (compensaçêo da aula 4)
 O "real simulado" é kit/mundos/real.json: um MuJoCo com parâmetros escondidos, dito como tal.
 """
 import argparse

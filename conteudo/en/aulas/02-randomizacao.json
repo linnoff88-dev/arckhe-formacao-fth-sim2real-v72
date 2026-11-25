@@ -140,7 +140,7 @@
         {
           "rot": "File · kit/mundos/fora.json",
           "icone": "arquivo",
-          "conteudo": "{\n  \"nome\": \"fora\",\n  \"descricao\": \"além do treino: atrito um pouco abaixo de 0.3, carga maior e kp e atraso, que o treino não randomizou\",\n  \"atrito\": [\n    0.2,\n    0.6\n  ],\n  \"massa\": [\n    2.0,\n    8.0\n  ],\n  \"kp\": [\n    0.6,\n    1.0\n  ],\n  \"atraso_ms\": [\n    0,\n    30\n  ],\n  \"empurrao_vel\": [\n    -0.5,\n    0.5\n  ]\n}"
+          "conteudo": "{\n  \"nome\": \"fora\",\n  \"descricao\": \"além do treino: atrito um pouco abaixo de 0.3, carga maior e kp e atraso, que o treino nêo randomizou\",\n  \"atrito\": [\n    0.2,\n    0.6\n  ],\n  \"massa\": [\n    2.0,\n    8.0\n  ],\n  \"kp\": [\n    0.6,\n    1.0\n  ],\n  \"atraso_ms\": [\n    0,\n    30\n  ],\n  \"empurrao_vel\": [\n    -0.5,\n    0.5\n  ]\n}"
         }
       ]
     },
@@ -169,7 +169,7 @@
           },
           {
             "rot": "Common mistake: blaming a single parameter",
-            "html": "<pre>   1 atrito=0.45 massa=7.38 kp=0.91 atraso_ms=6 empurrão 172 N → de pé\n   2 atrito=0.20 massa=6.93 kp=0.92 atraso_ms=14 empurrão 119 N → caiu\n   3 atrito=0.30 massa=4.67 kp=0.80 atraso_ms=16 empurrão 219 N → caiu\n   4 atrito=0.45 massa=7.93 kp=0.69 atraso_ms=4 empurrão 194 N → caiu\n   5 atrito=0.21 massa=5.09 kp=0.79 atraso_ms=28 empurrão 50 N → caiu\n   6 atrito=0.40 massa=3.49 kp=0.60 atraso_ms=6 empurrão 131 N → caiu</pre><p>World 1 has a mass of 7.4 kg and stays up; world 4, at 7.9 kg, falls; world 6 has friction 0.40 and falls. No single parameter explains the score: outside the range, it is the combination. Looking at just one world and blaming one parameter is the common mistake; compare scores and, to claim a cause, vary one parameter at a time (E2).</p>"
+            "html": "<pre>   1 atrito=0.45 massa=7.38 kp=0.91 atraso_ms=6 empurrêo 172 N → de pé\n   2 atrito=0.20 massa=6.93 kp=0.92 atraso_ms=14 empurrêo 119 N → caiu\n   3 atrito=0.30 massa=4.67 kp=0.80 atraso_ms=16 empurrêo 219 N → caiu\n   4 atrito=0.45 massa=7.93 kp=0.69 atraso_ms=4 empurrêo 194 N → caiu\n   5 atrito=0.21 massa=5.09 kp=0.79 atraso_ms=28 empurrêo 50 N → caiu\n   6 atrito=0.40 massa=3.49 kp=0.60 atraso_ms=6 empurrêo 131 N → caiu</pre><p>World 1 has a mass of 7.4 kg and stays up; world 4, at 7.9 kg, falls; world 6 has friction 0.40 and falls. No single parameter explains the score: outside the range, it is the combination. Looking at just one world and blaming one parameter is the common mistake; compare scores and, to claim a cause, vary one parameter at a time (E2).</p>"
           }
         ]
       }

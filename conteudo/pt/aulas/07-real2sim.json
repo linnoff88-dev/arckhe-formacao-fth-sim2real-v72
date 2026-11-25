@@ -5,7 +5,7 @@
   "titulo": "Real-to-sim: trazer o mundo real para o simulador",
   "titulo_curto": "Real-to-sim",
   "minutos": 14,
-  "lead": "Até aqui o caminho foi do simulador para o robô. O caminho inverso também existe: fotografar o lugar real e montar um gêmeo onde o robô treina e é testado antes. Nesta aula você roda o gêmeo do projeto robotica-real2sim (braço, não humanoide) no venv do curso e prova um plano na física, e vê onde isso está para humanoides em 2026.",
+  "lead": "Até aqui o caminho foi do simulador para o robô. O caminho inverso também existe: fotografar o lugar real e montar um gêmeo onde o robô treina e é testado antes. Nesta aula você roda o gêmeo do projeto robotica-real2sim (braço, nêo humanoide) no venv do curso e prova um plano na física, e vê onde isso está para humanoides em 2026.",
   "objetivo": "rodar o gêmeo do robotica-real2sim no venv do curso e provar um plano na física antes do robô, contando os objetos da cena.",
   "competencias": [
     "explicar-real-to-sim",
@@ -41,7 +41,7 @@
           "icone": "video",
           "titulo": "Foto",
           "sub": "o lugar",
-          "detalhe": "Uma foto da mesa, com uma folha A4 como régua. No projeto, um modelo de visão lê a foto; este curso não roda esse passo (chama modelo) e parte da cena já pronta.",
+          "detalhe": "Uma foto da mesa, com uma folha A4 como régua. No projeto, um modelo de visêo lê a foto; este curso nêo roda esse passo (chama modelo) e parte da cena já pronta.",
           "itens": [
             {
               "icone": "lista",
@@ -78,7 +78,7 @@
           "icone": "check",
           "titulo": "Prova",
           "sub": "20 variações",
-          "detalhe": "O plano roda 20 vezes com posições e tamanhos variados. Só vai ao robô se passar em 90 % ou mais: a mesma lógica do portão da aula 6.",
+          "detalhe": "O plano roda 20 vezes com posições e tamanhos variados. Só vai ao robô se passar em 90 % ou mais: a mesma lógica do portêo da aula 6.",
           "itens": [
             {
               "icone": "lista",
@@ -87,18 +87,18 @@
           ]
         }
       ],
-      "legenda": "Real-to-sim é o assunto do robotica-real2sim. Aqui ele roda e é ligado à escada: um gêmeo do lugar é mais um degrau antes do chão."
+      "legenda": "Real-to-sim é o assunto do robotica-real2sim. Aqui ele roda e é ligado à escada: um gêmeo do lugar é mais um degrau antes do chêo."
     },
     {
       "tipo": "passos",
       "titulo": "E para humanoides?",
-      "sub": "Estado em out/2026, segundo a pesquisa da formação. Clique em cada item.",
+      "sub": "Estado em out/2026, segundo a pesquisa da formaçêo. Clique em cada item.",
       "passos": [
         {
           "titulo": "Gaussian splatting",
           "sub": "relatado",
           "texto": [
-            "A Niantic Spatial, a Flexion e a NVIDIA mostraram uma cena escaneada por câmera virando Gaussian splatting no Isaac Sim, com uma política de navegação de humanoide treinada lá e levada ao robô sem ajuste. É material de fornecedor, não paper com medição."
+            "A Niantic Spatial, a Flexion e a NVIDIA mostraram uma cena escaneada por câmera virando Gaussian splatting no Isaac Sim, com uma política de navegaçêo de humanoide treinada lá e levada ao robô sem ajuste. É material de fornecedor, nêo paper com mediçêo."
           ]
         },
         {
@@ -119,7 +119,7 @@
           "titulo": "Para você",
           "sub": "regra",
           "texto": [
-            "Gêmeo é tão bom quanto a medida que o alimenta. O projeto real2sim mediu isso: modelos de visão diferentes erraram o tamanho da bandeja, e a prova só aprova o que passa no pior caso."
+            "Gêmeo é têo bom quanto a medida que o alimenta. O projeto real2sim mediu isso: modelos de visêo diferentes erraram o tamanho da bandeja, e a prova só aprova o que passa no pior caso."
           ]
         }
       ]
@@ -149,11 +149,11 @@
           },
           {
             "rot": "Prova",
-            "html": "<pre>plano completo em 19/20 (95%); mínimo 90% -&gt; APROVADO para o robô real\n  lata_azul -&gt; bandeja_cinza: 20 ok \n  bola_tenis -&gt; bandeja_cinza: 19 ok {'objeto caiu fora do destino': 1}</pre><p>19 de 20 (95 %): aprovado. A falha é anotada pelo motivo, como no portão da aula 6.</p>"
+            "html": "<pre>plano completo em 19/20 (95%); mínimo 90% -&gt; APROVADO para o robô real\n  lata_azul -&gt; bandeja_cinza: 20 ok \n  bola_tenis -&gt; bandeja_cinza: 19 ok {'objeto caiu fora do destino': 1}</pre><p>19 de 20 (95 %): aprovado. A falha é anotada pelo motivo, como no portêo da aula 6.</p>"
           },
           {
             "rot": "Erro comum: sem GPU para desenhar",
-            "html": "<pre>                                        ^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'glGetError'</pre><p>O r2s.py desenha pela GPU (<code>MUJOCO_GL=egl</code>). Sem GPU, troque para <code>osmesa</code>, mas a biblioteca OSMesa tem de estar instalada; sem ela, o erro acima. Contar objetos não depende de desenhar: o gemeo.py lê o cena.json.</p>"
+            "html": "<pre>                                        ^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'glGetError'</pre><p>O r2s.py desenha pela GPU (<code>MUJOCO_GL=egl</code>). Sem GPU, troque para <code>osmesa</code>, mas a biblioteca OSMesa tem de estar instalada; sem ela, o erro acima. Contar objetos nêo depende de desenhar: o gemeo.py lê o cena.json.</p>"
           }
         ]
       }
@@ -195,18 +195,18 @@
     {
       "tipo": "quiz",
       "titulo": "Teste da aula",
-      "sub": "A explicação aparece depois da sua resposta.",
+      "sub": "A explicaçêo aparece depois da sua resposta.",
       "perguntas": [
         {
-          "p": "O que o real-to-sim faz que o sim-to-real não faz?",
+          "p": "O que o real-to-sim faz que o sim-to-real nêo faz?",
           "opcoes": [
             "Treina a política direto no robô, sem simulador.",
             "Leva o lugar real para dentro do simulador antes do teste.",
-            "Substitui a randomização por uma única medida exata do lugar real.",
-            "Dispensa o portão sim2sim."
+            "Substitui a randomizaçêo por uma única medida exata do lugar real.",
+            "Dispensa o portêo sim2sim."
           ],
           "certa": 1,
-          "explica": "É o caminho inverso: medir o mundo e montar o gêmeo. Depois, o caminho de volta (sim-to-real) continua com randomização, portão e escada.",
+          "explica": "É o caminho inverso: medir o mundo e montar o gêmeo. Depois, o caminho de volta (sim-to-real) continua com randomizaçêo, portêo e escada.",
           "ref": "diagrama",
           "cert": true
         },
@@ -216,10 +216,10 @@
             "Rotina em todo humanoide comercial.",
             "Exigido por norma antes de ligar o robô.",
             "Demo de fornecedor (relatado), sem sim-to-real medido em paper.",
-            "Impossível, porque splatting não roda em GPU."
+            "Impossível, porque splatting nêo roda em GPU."
           ],
           "certa": 2,
-          "explica": "A pesquisa da formação achou demos (Niantic/Flexion/NVIDIA) e o GaussGym, mas nenhuma medição de sim-to-real de humanoide publicada. Dito como relatado.",
+          "explica": "A pesquisa da formaçêo achou demos (Niantic/Flexion/NVIDIA) e o GaussGym, mas nenhuma mediçêo de sim-to-real de humanoide publicada. Dito como relatado.",
           "ref": "passos"
         },
         {
@@ -227,7 +227,7 @@
           "opcoes": [
             "Trocar para MUJOCO_GL=osmesa com a OSMesa instalada.",
             "Apagar o cena.json e gerar outro.",
-            "Usar o unitree_mujoco no lugar do gêmeo da mesa, que não desenha.",
+            "Usar o unitree_mujoco no lugar do gêmeo da mesa, que nêo desenha.",
             "Desligar a prova de 20 variações."
           ],
           "certa": 0,

@@ -82,7 +82,7 @@
           "itens": [
             {
               "icone": "lista",
-              "t": "PORTÃO: passou"
+              "t": "PORTêO: passou"
             }
           ]
         }
@@ -175,15 +175,15 @@
         "abas": [
           {
             "rot": "Steps 1 and 2 (10/19/2026)",
-            "html": "<pre>política: unitree_rl_lab velocity v0 · ordem das juntas: isaac · 0.5 m/s por 10 s\n1 Menagerie (MuJoCo, PD no MJCF)     passou · andou 4.7 m\n2 unitree_mujoco (passo 5 ms)        passou · andou 4.8 m\n                                     aviso: braços no limite de torque em 99% do tempo\nPORTÃO: passou (2 de 2 etapas)\nsaída: 0</pre><p>It passed, with the arms warning at the 5 ms step.</p>"
+            "html": "<pre>política: unitree_rl_lab velocity v0 · ordem das juntas: isaac · 0.5 m/s por 10 s\n1 Menagerie (MuJoCo, PD no MJCF)     passou · andou 4.7 m\n2 unitree_mujoco (passo 5 ms)        passou · andou 4.8 m\n                                     aviso: braços no limite de torque em 99% do tempo\nPORTêO: passou (2 de 2 etapas)\nsaída: 0</pre><p>It passed, with the arms warning at the 5 ms step.</p>"
           },
           {
             "rot": "With DDS (10/19/2026)",
-            "html": "<pre>política: unitree_rl_lab velocity v0 · ordem das juntas: isaac · 0.5 m/s por 10 s\n1 Menagerie (MuJoCo, PD no MJCF)     passou · andou 4.7 m\n2 unitree_mujoco (passo 1 ms)        passou · andou 4.7 m\n3 unitree_mujoco + DDS (tempo real)  passou · andou 5.3 m · política a 50 Hz\nPORTÃO: passou (3 de 3 etapas)\nsaída: 0</pre><p>Step 3 runs in real time: the distance and the arms warning change a little from one run to the next. What counts is the last line.</p>"
+            "html": "<pre>política: unitree_rl_lab velocity v0 · ordem das juntas: isaac · 0.5 m/s por 10 s\n1 Menagerie (MuJoCo, PD no MJCF)     passou · andou 4.7 m\n2 unitree_mujoco (passo 1 ms)        passou · andou 4.7 m\n3 unitree_mujoco + DDS (tempo real)  passou · andou 5.3 m · política a 50 Hz\nPORTêO: passou (3 de 3 etapas)\nsaída: 0</pre><p>Step 3 runs in real time: the distance and the arms warning change a little from one run to the next. What counts is the last line.</p>"
           },
           {
             "rot": "Common mistake: joint order",
-            "html": "<pre>política: unitree_rl_lab velocity v0 · ordem das juntas: sdk · 0.5 m/s por 10 s\n1 Menagerie (MuJoCo, PD no MJCF)     reprovou · andou -0.1 m e caiu · caiu em t = 1.0 s; pernas/cintura no limite de torque em 3% do tempo (máx. 1 %)\n                                     aviso: braços no limite de torque em 6% do tempo\n2 unitree_mujoco (passo 5 ms)        reprovou · andou -0.3 m e caiu · caiu em t = 1.0 s; pernas/cintura no limite de torque em 6% do tempo (máx. 1 %)\n                                     aviso: braços no limite de torque em 98% do tempo\nPORTÃO: reprovou — caiu em t = 1.0 s\nsaída: 1</pre><p>With <code>--ordem sdk</code>, the kit uses the default pose and the actions as if they were already in the robot's order. The G1 falls in 1 s in both models. If your policy falls as soon as it starts, check the map before anything else.</p>"
+            "html": "<pre>política: unitree_rl_lab velocity v0 · ordem das juntas: sdk · 0.5 m/s por 10 s\n1 Menagerie (MuJoCo, PD no MJCF)     reprovou · andou -0.1 m e caiu · caiu em t = 1.0 s; pernas/cintura no limite de torque em 3% do tempo (máx. 1 %)\n                                     aviso: braços no limite de torque em 6% do tempo\n2 unitree_mujoco (passo 5 ms)        reprovou · andou -0.3 m e caiu · caiu em t = 1.0 s; pernas/cintura no limite de torque em 6% do tempo (máx. 1 %)\n                                     aviso: braços no limite de torque em 98% do tempo\nPORTêO: reprovou — caiu em t = 1.0 s\nsaída: 1</pre><p>With <code>--ordem sdk</code>, the kit uses the default pose and the actions as if they were already in the robot's order. The G1 falls in 1 s in both models. If your policy falls as soon as it starts, check the map before anything else.</p>"
           }
         ]
       }
@@ -205,14 +205,14 @@
           "titulo": "E2 · Gate with DDS",
           "min": "3 min",
           "texto": "Run the three steps with a 1 ms step.",
-          "pronto": "<code>python3 kit/portao_sim2sim.py --passo 0.001 --dds 2&gt;/dev/null; echo \"saída: $?\"</code> → <code>PORTÃO: passou (3 de 3 etapas)</code> and <code>saída: 0</code>."
+          "pronto": "<code>python3 kit/portao_sim2sim.py --passo 0.001 --dds 2&gt;/dev/null; echo \"saída: $?\"</code> → <code>PORTêO: passou (3 de 3 etapas)</code> and <code>saída: 0</code>."
         },
         {
           "id": "e3",
           "titulo": "E3 · The gate catches the error",
           "min": "3 min",
           "texto": "Run with the wrong joint order and note at which step and how long until it fails.",
-          "pronto": "<code>python3 kit/portao_sim2sim.py --ordem sdk; echo \"saída: $?\"</code> → <code>PORTÃO: reprovou — caiu em t = 1.0 s</code> and <code>saída: 1</code>."
+          "pronto": "<code>python3 kit/portao_sim2sim.py --ordem sdk; echo \"saída: $?\"</code> → <code>PORTêO: reprovou — caiu em t = 1.0 s</code> and <code>saída: 1</code>."
         }
       ]
     },

@@ -1,4 +1,4 @@
-log: ~/fth/log.npz · correção recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta
+log: ~/fth/log.npz · correçêo recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta
   left_hip_pitch     a = -0.66  b = -0.013
   left_hip_roll      a = -0.48  b = +0.006
   left_knee          a = -0.66  b = +0.011

@@ -144,7 +144,7 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>log: ~/fth/log.npz · correção recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta\n  left_hip_pitch     a = -0.66  b = -0.013\n  left_hip_roll      a = -0.48  b = +0.006\n  left_knee          a = -0.66  b = +0.011\n  left_ankle_pitch   a = -0.71  b = +0.031\nerro de rastreio sim × real: antes 8.16° → depois 3.82° (RMS das posições)\nsaída: 0</pre><p>Antes, el simulador se equivoca en las posiciones de la pierna por 8,16° (RMS). Con la corrección, 3,82°. Sale 0 cuando el error baja.</p>"
+            "html": "<pre>log: ~/fth/log.npz · correçêo recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta\n  left_hip_pitch     a = -0.66  b = -0.013\n  left_hip_roll      a = -0.48  b = +0.006\n  left_knee          a = -0.66  b = +0.011\n  left_ankle_pitch   a = -0.71  b = +0.031\nerro de rastreio sim × real: antes 8.16° → depois 3.82° (RMS das posições)\nsaída: 0</pre><p>Antes, el simulador se equivoca en las posiciones de la pierna por 8,16° (RMS). Con la corrección, 3,82°. Sale 0 cuando el error baja.</p>"
           },
           {
             "rot": "Error común: un paso a la vez",

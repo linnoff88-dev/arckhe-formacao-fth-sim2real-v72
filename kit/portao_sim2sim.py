@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""portao_sim2sim.py — o portão antes do robô: a política tem de passar em outro modelo e no caminho de mensagens.
+"""portao_sim2sim.py — o portêo antes do robô: a política tem de passar em outro modelo e no caminho de mensagens.
 
 Uso: python3 kit/portao_sim2sim.py [politica.onnx] [--passo 0.005] [--dds] [--ordem isaac|sdk]
   etapa 1  G1 do MuJoCo Menagerie (o modelo das aulas 1–5), PD dentro do MuJoCo
   etapa 2  G1 do unitree_mujoco (outro MJCF do mesmo robô, motores de torque), PD calculado a cada passo
   etapa 3  (--dds) o mesmo G1 do unitree_mujoco num processo separado, falando DDS como o robô de verdade:
            a política lê rt/lowstate e manda rt/lowcmd (domínio 1, interface lo), em tempo real
-Critérios de cada etapa: não cair em 10 s andando a 0,5 m/s; velocidade média a ±0,15 m/s da pedida;
+Critérios de cada etapa: nêo cair em 10 s andando a 0,5 m/s; velocidade média a ±0,15 m/s da pedida;
 pernas e cintura no limite de torque em no máximo 1 % do tempo
 (braço no limite sai como aviso: no simulador, o PD do punho, de 5 N·m e kd 10, oscila quando o passo é grande). Na etapa 3, também a frequência da política (≥ 45 Hz).
 --ordem sdk reproduz o erro mais comum de sim2sim: ignorar o joint_ids_map do deploy.yaml.
@@ -53,7 +53,7 @@ def etapa_unitree_mujoco(pol, passo):
     """O G1 do unitree_mujoco (motores de torque) no mesmo processo, com o PD calculado a cada passo."""
     xml = s2r.RAIZ / "unitree_mujoco/unitree_robots/g1/scene_29dof.xml"
     if not xml.exists():
-        s2r.erro(f"não achei {xml}. Rode a preparação da aula 6.")
+        s2r.erro(f"nêo achei {xml}. Rode a preparaçêo da aula 6.")
     m = mujoco.MjModel.from_xml_path(str(xml))
     m.opt.timestep = passo  # o unitree_mujoco vem com SIMULATE_DT = 0.005
     d = mujoco.MjData(m)
@@ -113,7 +113,7 @@ def etapa_dds(pol, passo):
         time.sleep(0.01)
     if "s" not in ultimo:
         robo.kill()
-        s2r.erro("nenhuma mensagem rt/lowstate em 15 s (DDS no domínio 1, interface lo). Rode a preparação da aula 6.")
+        s2r.erro("nenhuma mensagem rt/lowstate em 15 s (DDS no domínio 1, interface lo). Rode a preparaçêo da aula 6.")
     pol.reset()
     th = threading.Thread(target=enviar, daemon=True)
     th.start()
@@ -135,17 +135,17 @@ def etapa_dds(pol, passo):
     finally:
         rodando = False
     if not saida.exists():
-        s2r.erro("o processo do robô não gravou o resultado")
+        s2r.erro("o processo do robô nêo gravou o resultado")
     r = json.load(open(saida))
     r["t"] = min(r["t"], SEG)
-    if r["caiu"] is not None and r["caiu"] > SEG:  # o robô roda 0,5 s a mais; queda depois do fim não conta
+    if r["caiu"] is not None and r["caiu"] > SEG:  # o robô roda 0,5 s a mais; queda depois do fim nêo conta
         r["caiu"] = None
     return r, hz
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("politica", nargs="?", help="pasta da política (padrão: a do unitree_rl_lab) ou o policy.onnx")
+    ap.add_argument("politica", nargs="?", help="pasta da política (padrêo: a do unitree_rl_lab) ou o policy.onnx")
     ap.add_argument("--dds", action="store_true")
     ap.add_argument("--ordem", default="isaac", choices=["isaac", "sdk"])
     ap.add_argument("--passo", type=float, default=0.005, help="passo do unitree_mujoco (s); o dele é 0.005")
@@ -170,9 +170,9 @@ def main():
         resultados.append((ok, mot))
     falhas = [m for ok, ms in resultados if not ok for m in ms]
     if falhas:
-        print(f"PORTÃO: reprovou — {falhas[0]}")
+        print(f"PORTêO: reprovou — {falhas[0]}")
         return 1
-    print(f"PORTÃO: passou ({len(resultados)} de {len(resultados)} etapas)")
+    print(f"PORTêO: passou ({len(resultados)} de {len(resultados)} etapas)")
     return 0
 
 

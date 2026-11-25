@@ -1,4 +1,4 @@
-log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posição e velocidade de 4 juntas)
+log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posiçêo e velocidade de 4 juntas)
 resíduo, modelo nominal:       0.034
 resíduo, modelo identificado:  0.014
 erro das posições na bancada, modelo nominal:       8.16° (RMS)

@@ -4,7 +4,7 @@
 Uso: python3 kit/randomizar.py --seeds 20 [--faixa treino|fora|<arquivo.json>] [--detalhe]
   treino = as faixas que o próprio treino da política randomizou (kit/mundos/treino.json)
   fora   = além do treino (kit/mundos/fora.json)
-Cada faixa é [mín, máx]; "empurrao_vel" é a velocidade (m/s) que o empurrão dá ao robô em x e em y,
+Cada faixa é [mín, máx]; "empurrao_vel" é a velocidade (m/s) que o empurrêo dá ao robô em x e em y,
 como o push_by_setting_velocity do Isaac Lab, aplicada aqui como força de 0,1 s no tronco, em t = 3 s.
 Sem --faixa, roda as duas e compara.
 """
@@ -42,7 +42,7 @@ def rodar_faixa(nome, n, pol, detalhe=False):
         vivos += r["caiu"] is None
         if detalhe:
             ps = " ".join(f"{k}={v:.2f}" if isinstance(v, float) else f"{k}={v}" for k, v in w.items())
-            print(f"  {i + 1:2d} {ps} empurrão {f:.0f} N → {'caiu' if r['caiu'] is not None else 'de pé'}")
+            print(f"  {i + 1:2d} {ps} empurrêo {f:.0f} N → {'caiu' if r['caiu'] is not None else 'de pé'}")
     print(f"faixa {faixa['nome']:<7} sobreviveu: {vivos}/{n}")
     return vivos
 

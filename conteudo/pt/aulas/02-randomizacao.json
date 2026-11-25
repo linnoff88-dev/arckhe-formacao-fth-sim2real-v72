@@ -1,12 +1,12 @@
 {
   "slug": "randomizacao",
   "num": 2,
-  "menu": "Randomização",
+  "menu": "Randomizaçêo",
   "titulo": "Domain randomization: treinar para o mundo variado",
   "titulo_curto": "Domain randomization",
   "minutos": 16,
   "lead": "Se o simulador nunca acerta o mundo, treina-se a política em muitos mundos sorteados. Nesta aula você lê as faixas que a própria Unitree randomizou no treino da política, sorteia 20 mundos dentro delas e 20 fora, e mede a diferença. A política aguenta o que viu no treino e falha logo depois.",
-  "objetivo": "ler as faixas de randomização de um treino real e medir a sobrevivência da política dentro e fora delas.",
+  "objetivo": "ler as faixas de randomizaçêo de um treino real e medir a sobrevivência da política dentro e fora delas.",
   "competencias": [
     "ler-eventos-de-randomizacao",
     "medir-cobertura-da-randomizacao",
@@ -15,11 +15,11 @@
   "aprende": [
     {
       "icone": "arquivo",
-      "t": "Onde a randomização mora num projeto real: os eventos do Isaac Lab"
+      "t": "Onde a randomizaçêo mora num projeto real: os eventos do Isaac Lab"
     },
     {
       "icone": "lista",
-      "t": "As faixas da política do G1: atrito, massa e empurrão (e o que ficou de fora)"
+      "t": "As faixas da política do G1: atrito, massa e empurrêo (e o que ficou de fora)"
     },
     {
       "icone": "grafico",
@@ -27,7 +27,7 @@
     },
     {
       "icone": "lupa",
-      "t": "Por que randomizar tudo no máximo também não serve"
+      "t": "Por que randomizar tudo no máximo também nêo serve"
     }
   ],
   "hero_alt": "Parede de monitores num laboratório escuro, cada um com um robô humanoide simulado andando sobre um piso diferente.",
@@ -53,11 +53,11 @@
           "icone": "cerebro",
           "titulo": "Política",
           "sub": "robusta",
-          "detalhe": "Como nunca viu o mesmo mundo duas vezes, a política aprende a não depender do valor exato. O custo: treino mais longo e, às vezes, marcha mais conservadora.",
+          "detalhe": "Como nunca viu o mesmo mundo duas vezes, a política aprende a nêo depender do valor exato. O custo: treino mais longo e, às vezes, marcha mais conservadora.",
           "itens": [
             {
               "icone": "lista",
-              "t": "não decora um mundo"
+              "t": "nêo decora um mundo"
             }
           ]
         },
@@ -78,7 +78,7 @@
           "icone": "check",
           "titulo": "Placar",
           "sub": "X/20",
-          "detalhe": "Sobrevivência = 10 s andando sem a pelve descer de 0,5 m. Conta, não valor de recompensa: é o que dá para comparar entre faixas e entre políticas.",
+          "detalhe": "Sobrevivência = 10 s andando sem a pelve descer de 0,5 m. Conta, nêo valor de recompensa: é o que dá para comparar entre faixas e entre políticas.",
           "itens": [
             {
               "icone": "lista",
@@ -87,11 +87,11 @@
           ]
         }
       ],
-      "legenda": "Randomização não é \"mais é melhor\": é cobrir o mundo onde o robô vai andar."
+      "legenda": "Randomizaçêo nêo é \"mais é melhor\": é cobrir o mundo onde o robô vai andar."
     },
     {
       "tipo": "passos",
-      "titulo": "O que a Unitree randomizou (e o que não)",
+      "titulo": "O que a Unitree randomizou (e o que nêo)",
       "sub": "Lido em velocity_env_cfg.py, unitree_rl_lab 4960b84 (19/11/2025). Clique em cada item.",
       "passos": [
         {
@@ -99,7 +99,7 @@
           "sub": "0,3 a 1,0",
           "texto": [
             "Evento <code>physics_material</code>, no início (startup): atrito estático e dinâmico entre 0,3 e 1,0 em todos os corpos do robô.",
-            "No sorteio de fora desta aula, os mundos com atrito perto de 0,2 (o 2 e o 5) caem; o chão da faixa do treino é o chão do que a política viu."
+            "No sorteio de fora desta aula, os mundos com atrito perto de 0,2 (o 2 e o 5) caem; o chêo da faixa do treino é o chêo do que a política viu."
           ]
         },
         {
@@ -110,7 +110,7 @@
           ]
         },
         {
-          "titulo": "Empurrão",
+          "titulo": "Empurrêo",
           "sub": "±0,5 m/s",
           "texto": [
             "Evento <code>push_robot</code>, a cada 5 s: muda a velocidade da base em até ±0,5 m/s em x e em y. O kit aplica o equivalente como força de 0,1 s no tronco.",
@@ -121,7 +121,7 @@
           "titulo": "Fora",
           "sub": "kp e atraso",
           "texto": [
-            "Não há randomização de kp, kd nem de atraso nesta tarefa. Na aula 1, o kp sozinho já mudou a marcha (0,75 m/s pedindo 0,50); o atraso pesa sob empurrão (aula 4).",
+            "Nêo há randomizaçêo de kp, kd nem de atraso nesta tarefa. Na aula 1, o kp sozinho já mudou a marcha (0,75 m/s pedindo 0,50); o atraso pesa sob empurrêo (aula 4).",
             "Outros projetos randomizam ganhos e atraso; o que importa é saber o que o seu treino cobriu antes de ligar o robô."
           ]
         }
@@ -140,14 +140,14 @@
         {
           "rot": "Arquivo · kit/mundos/fora.json",
           "icone": "arquivo",
-          "conteudo": "{\n  \"nome\": \"fora\",\n  \"descricao\": \"além do treino: atrito um pouco abaixo de 0.3, carga maior e kp e atraso, que o treino não randomizou\",\n  \"atrito\": [\n    0.2,\n    0.6\n  ],\n  \"massa\": [\n    2.0,\n    8.0\n  ],\n  \"kp\": [\n    0.6,\n    1.0\n  ],\n  \"atraso_ms\": [\n    0,\n    30\n  ],\n  \"empurrao_vel\": [\n    -0.5,\n    0.5\n  ]\n}"
+          "conteudo": "{\n  \"nome\": \"fora\",\n  \"descricao\": \"além do treino: atrito um pouco abaixo de 0.3, carga maior e kp e atraso, que o treino nêo randomizou\",\n  \"atrito\": [\n    0.2,\n    0.6\n  ],\n  \"massa\": [\n    2.0,\n    8.0\n  ],\n  \"kp\": [\n    0.6,\n    1.0\n  ],\n  \"atraso_ms\": [\n    0,\n    30\n  ],\n  \"empurrao_vel\": [\n    -0.5,\n    0.5\n  ]\n}"
         }
       ]
     },
     {
       "tipo": "codigo",
       "titulo": "Sortear e contar",
-      "sub": "O randomizar.py sorteia 20 mundos por faixa com semente fixa (7) e roda 10 s andando em cada um, com o empurrão em t = 3 s.",
+      "sub": "O randomizar.py sorteia 20 mundos por faixa com semente fixa (7) e roda 10 s andando em cada um, com o empurrêo em t = 3 s.",
       "blocos": [
         {
           "rot": "Terminal · dentro e fora da faixa",
@@ -169,7 +169,7 @@
           },
           {
             "rot": "Erro comum: culpar um parâmetro só",
-            "html": "<pre>   1 atrito=0.45 massa=7.38 kp=0.91 atraso_ms=6 empurrão 172 N → de pé\n   2 atrito=0.20 massa=6.93 kp=0.92 atraso_ms=14 empurrão 119 N → caiu\n   3 atrito=0.30 massa=4.67 kp=0.80 atraso_ms=16 empurrão 219 N → caiu\n   4 atrito=0.45 massa=7.93 kp=0.69 atraso_ms=4 empurrão 194 N → caiu\n   5 atrito=0.21 massa=5.09 kp=0.79 atraso_ms=28 empurrão 50 N → caiu\n   6 atrito=0.40 massa=3.49 kp=0.60 atraso_ms=6 empurrão 131 N → caiu</pre><p>O mundo 1 tem massa de 7,4 kg e fica de pé; o 4, com 7,9 kg, cai; o 6 tem atrito 0,40 e cai. Nenhum parâmetro isolado explica o placar: fora da faixa, é a combinação. Olhar um mundo só e culpar um parâmetro é o erro comum; compare placares e, para afirmar uma causa, varie um parâmetro de cada vez (E2).</p>"
+            "html": "<pre>   1 atrito=0.45 massa=7.38 kp=0.91 atraso_ms=6 empurrêo 172 N → de pé\n   2 atrito=0.20 massa=6.93 kp=0.92 atraso_ms=14 empurrêo 119 N → caiu\n   3 atrito=0.30 massa=4.67 kp=0.80 atraso_ms=16 empurrêo 219 N → caiu\n   4 atrito=0.45 massa=7.93 kp=0.69 atraso_ms=4 empurrêo 194 N → caiu\n   5 atrito=0.21 massa=5.09 kp=0.79 atraso_ms=28 empurrêo 50 N → caiu\n   6 atrito=0.40 massa=3.49 kp=0.60 atraso_ms=6 empurrêo 131 N → caiu</pre><p>O mundo 1 tem massa de 7,4 kg e fica de pé; o 4, com 7,9 kg, cai; o 6 tem atrito 0,40 e cai. Nenhum parâmetro isolado explica o placar: fora da faixa, é a combinaçêo. Olhar um mundo só e culpar um parâmetro é o erro comum; compare placares e, para afirmar uma causa, varie um parâmetro de cada vez (E2).</p>"
           }
         ]
       }
@@ -218,7 +218,7 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>faixa so-kp   sobreviveu: 11/20</pre><p>Só acrescentar o kp, que o treino não variou, derruba 9 de 20.</p>"
+            "html": "<pre>faixa so-kp   sobreviveu: 11/20</pre><p>Só acrescentar o kp, que o treino nêo variou, derruba 9 de 20.</p>"
           }
         ]
       }
@@ -226,40 +226,40 @@
     {
       "tipo": "quiz",
       "titulo": "Teste da aula",
-      "sub": "A explicação aparece depois da sua resposta.",
+      "sub": "A explicaçêo aparece depois da sua resposta.",
       "perguntas": [
         {
           "p": "A política sobreviveu 20/20 dentro das faixas do treino e 8/20 fora. O que isso mede?",
           "opcoes": [
             "Que a política foi mal treinada e precisa de mais iterações.",
-            "Que o simulador é diferente a cada sorteio e não serve para avaliar.",
-            "Que o empurrão de 0,5 m/s é forte demais para qualquer humanoide.",
-            "A cobertura da randomização: ela aguenta o que viu no treino."
+            "Que o simulador é diferente a cada sorteio e nêo serve para avaliar.",
+            "Que o empurrêo de 0,5 m/s é forte demais para qualquer humanoide.",
+            "A cobertura da randomizaçêo: ela aguenta o que viu no treino."
           ],
           "certa": 3,
-          "explica": "Randomização compra robustez dentro da faixa. Fora dela não há garantia; por isso se lê o que o treino cobriu antes de ir ao robô.",
+          "explica": "Randomizaçêo compra robustez dentro da faixa. Fora dela nêo há garantia; por isso se lê o que o treino cobriu antes de ir ao robô.",
           "ref": "diagrama",
           "cert": true
         },
         {
-          "p": "Nesta política, o que a tarefa do unitree_rl_lab não randomiza?",
+          "p": "Nesta política, o que a tarefa do unitree_rl_lab nêo randomiza?",
           "opcoes": [
-            "O atrito do pé com o chão em todos os corpos.",
+            "O atrito do pé com o chêo em todos os corpos.",
             "O kp, o kd e o atraso do atuador.",
             "A massa somada ao tronco.",
             "Os empurrões a cada 5 s."
           ],
           "certa": 1,
-          "explica": "Atrito, massa e empurrão estão na EventCfg. Ganhos e atraso não estão; o kp sozinho já mudou a marcha na aula 1, e o atraso derruba sob empurrão na aula 4.",
+          "explica": "Atrito, massa e empurrêo estêo na EventCfg. Ganhos e atraso nêo estêo; o kp sozinho já mudou a marcha na aula 1, e o atraso derruba sob empurrêo na aula 4.",
           "ref": "passos"
         },
         {
-          "p": "Por que não randomizar tudo na faixa mais larga possível?",
+          "p": "Por que nêo randomizar tudo na faixa mais larga possível?",
           "opcoes": [
             "Porque a política fica conservadora e o treino mais difícil.",
-            "Porque o MuJoCo não aceita mais de quatro parâmetros variados.",
+            "Porque o MuJoCo nêo aceita mais de quatro parâmetros variados.",
             "Porque randomizar faz a política esquecer o comando de velocidade.",
-            "Porque o robô real não tem atrito nem atraso variáveis."
+            "Porque o robô real nêo tem atrito nem atraso variáveis."
           ],
           "certa": 0,
           "explica": "Faixa larga demais custa desempenho e tempo de treino. A regra é cobrir o mundo onde o robô vai trabalhar, com margem, e medir.",
@@ -285,7 +285,7 @@
       "itens": [
         {
           "t": "Faixas",
-          "texto": "O treino do G1 randomiza atrito 0,3–1,0, massa −1 a +3 kg e empurrões; não randomiza kp nem atraso."
+          "texto": "O treino do G1 randomiza atrito 0,3–1,0, massa −1 a +3 kg e empurrões; nêo randomiza kp nem atraso."
         },
         {
           "t": "Placar",

@@ -2,14 +2,14 @@
 """delta.py — corrigir o simulador com dados do robô: um brinquedo linear da ideia do "delta action" (ASAP).
 
 Uso: python3 kit/delta.py log.npz
-O ASAP (RSS 2025, LeCAR-Lab/ASAP) treina por RL um modelo que soma uma ação corretiva ao comando dentro do
+O ASAP (RSS 2025, LeCAR-Lab/ASAP) treina por RL um modelo que soma uma açêo corretiva ao comando dentro do
 simulador até ele reproduzir as trajetórias do robô real, e depois ajusta a política nesse simulador corrigido.
 Aqui, a mesma ideia em pequeno:
-  - modelo de correção por junta da perna: δ = a·(alvo − q) + b·dq, recalculado a cada 20 ms (passo da política);
-  - os 8 números (a e b de 4 juntas) são ajustados por mínimos quadrados (mujoco.minimize.least_squares) para
-    que o simulador, repetindo o comando do log com a correção, chegue às posições que o robô mediu;
-  - no fim, compara o erro sim × real com e sem a correção.
-Diferença do ASAP: lá o modelo é uma rede treinada por RL com o estado inteiro; aqui são 8 coeficientes.
+  - modelo de correçêo por junta da perna: δ = a·(alvo − q) + b·dq, recalculado a cada 20 ms (passo da política);
+  - os 8 números (a e b de 4 juntas) sêo ajustados por mínimos quadrados (mujoco.minimize.least_squares) para
+    que o simulador, repetindo o comando do log com a correçêo, chegue às posições que o robô mediu;
+  - no fim, compara o erro sim × real com e sem a correçêo.
+Diferença do ASAP: lá o modelo é uma rede treinada por RL com o estado inteiro; aqui sêo 8 coeficientes.
 """
 import argparse
 
@@ -48,7 +48,7 @@ def main():
     x0 = np.zeros(2 * n)
     lim_inf, lim_sup = np.r_[-np.ones(n), -0.2 * np.ones(n)], np.r_[np.ones(n), 0.2 * np.ones(n)]
     x, _ = minimize.least_squares(x0, residuo, (lim_inf, lim_sup), eps=1e-4, verbose=0, max_iter=25)
-    print(f"log: {a.log} · correção recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta")
+    print(f"log: {a.log} · correçêo recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta")
     for c, j in enumerate(juntas):
         print(f"  {j.replace('_joint', ''):<18} a = {x[c]:+.2f}  b = {x[n + c]:+.3f}")
     antes = s2r.replay_bancada(pol, L)

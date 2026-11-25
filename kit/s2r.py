@@ -1,10 +1,10 @@
-"""s2r.py — funções comuns do kit do curso FTH 2 (Do simulador ao chão).
+"""s2r.py — funções comuns do kit do curso FTH 2 (Do simulador ao chêo).
 
 A "política" das práticas é a política de velocidade do Unitree G1 29 GDL que a Unitree publica pronta no
 unitree_rl_lab (treinada no Isaac Lab, exportada em ONNX, Apache-2.0). O kit a roda no MuJoCo com o G1 do
 MuJoCo Menagerie: isso já é um sim2sim (Isaac Lab → MuJoCo).
 
-Bancada: $FTH (padrão ~/fth) com .venv, mujoco_menagerie (62ab00f) e unitree_rl_lab (4960b84).
+Bancada: $FTH (padrêo ~/fth) com .venv, mujoco_menagerie (62ab00f) e unitree_rl_lab (4960b84).
 Testado com mujoco 3.16.0, onnxruntime 1.31.0, numpy 2.5.4, Python 3.12, aarch64, 19/10/2026.
 """
 import json
@@ -35,17 +35,17 @@ def ler_yaml(p):
 
 
 class Politica:
-    """Política ONNX + as regras do deploy.yaml: ordem das juntas, ganhos, pose padrão, escalas e histórico.
+    """Política ONNX + as regras do deploy.yaml: ordem das juntas, ganhos, pose padrêo, escalas e histórico.
 
     ordem="isaac" (certo): a lista joint_ids_map traduz a ordem do Isaac Lab para a ordem do robô (SDK/MJCF).
-    ordem="sdk" (o erro comum): usa a pose padrão e as ações como se já estivessem na ordem do robô.
+    ordem="sdk" (o erro comum): usa a pose padrêo e as ações como se já estivessem na ordem do robô.
     """
 
     def __init__(self, pasta=POLITICA, ordem="isaac"):
         cfg_p = Path(pasta) / "params/deploy.yaml"
         onnx_p = Path(pasta) / "exported/policy.onnx"
         if not onnx_p.exists():
-            erro(f"não achei {onnx_p}. Rode a preparação da aula 1 (unitree_rl_lab no sparse-checkout).")
+            erro(f"nêo achei {onnx_p}. Rode a preparaçêo da aula 1 (unitree_rl_lab no sparse-checkout).")
         import onnxruntime as ort
         so = ort.SessionOptions()
         so.intra_op_num_threads = 1
@@ -59,7 +59,7 @@ class Politica:
         self.kp = np.array(c["stiffness"], float)   # já na ordem do robô
         self.kd = np.array(c["damping"], float)
         self.q0 = np.zeros(n)
-        self.q0[self.mapa] = c["default_joint_pos"]  # o yaml traz a pose padrão na ordem do Isaac Lab
+        self.q0[self.mapa] = c["default_joint_pos"]  # o yaml traz a pose padrêo na ordem do Isaac Lab
         self.escala = np.array(c["actions"]["JointPositionAction"]["scale"], float)
         ob = c["observations"]
         self.h = ob["base_ang_vel"]["history_length"]
@@ -73,7 +73,7 @@ class Politica:
         self.hist = None
 
     def passo(self, w_corpo, quat_wxyz, cmd, q, dq):
-        """Recebe o estado na ordem do robô e devolve o alvo de posição de cada junta (ordem do robô)."""
+        """Recebe o estado na ordem do robô e devolve o alvo de posiçêo de cada junta (ordem do robô)."""
         g = np.zeros(3)
         qw, qx, qy, qz = quat_wxyz
         mujoco.mju_rotVecQuat(g, np.array([0.0, 0.0, -1.0]), np.array([qw, -qx, -qy, -qz]))
@@ -97,12 +97,12 @@ def carregar_mundo(nome_ou_caminho):
     if not p.exists():
         p = MUNDOS / f"{nome_ou_caminho}.json"
     if not p.exists():
-        erro(f"mundo {nome_ou_caminho} não existe (veja kit/mundos/)")
+        erro(f"mundo {nome_ou_caminho} nêo existe (veja kit/mundos/)")
     return json.load(open(p))
 
 
 def aplicar_ganhos(s, pol, kpx=1.0, kdx=1.0, atraso_ms=0.0, so=None):
-    """Põe o PD da política nos atuadores do spec. so = nomes das juntas a mexer (padrão: todas)."""
+    """Põe o PD da política nos atuadores do spec. so = nomes das juntas a mexer (padrêo: todas)."""
     dt = s.option.timestep
     atraso = atraso_ms / 1000.0
     for i, a in enumerate(s.actuators):
@@ -119,14 +119,14 @@ def aplicar_ganhos(s, pol, kpx=1.0, kdx=1.0, atraso_ms=0.0, so=None):
 
 
 def spec_g1(pol, mundo=None, fixo=False):
-    """Spec do G1 do Menagerie com o PD da política dentro do MuJoCo (atuador de posição: kp e kd do deploy.yaml).
+    """Spec do G1 do Menagerie com o PD da política dentro do MuJoCo (atuador de posiçêo: kp e kd do deploy.yaml).
 
     mundo: atrito (×), massa (kg somados ao tronco), kp (×), kd (×), atraso_ms (alvo chega atrasado),
            torque (× o limite de torque das juntas). fixo=True pendura o robô pela pelve (pórtico).
     """
     mundo = mundo or {}
     if not G1.exists():
-        erro(f"não achei {G1}. Rode a preparação da aula 1 (Menagerie com unitree_g1).")
+        erro(f"nêo achei {G1}. Rode a preparaçêo da aula 1 (Menagerie com unitree_g1).")
     s = mujoco.MjSpec.from_file(str(G1))
     for g in s.geoms:
         g.friction[0] *= mundo.get("atrito", 1.0)
@@ -160,7 +160,7 @@ AMPL = {"left_hip_pitch_joint": 0.35, "left_hip_roll_joint": 0.15, "left_knee_jo
 def spec_bancada(pol, mundo=None, historico=0):
     """historico > 0: guarda N comandos nos atuadores da perna (o sysid ajusta o atraso sem mudar o tamanho do estado)."""
     s = spec_g1(pol, mundo, fixo=True)
-    for sen in list(s.sensors):  # a bancada só lê os encoders da perna (a IMU do tronco não mexe: a pelve está presa)
+    for sen in list(s.sensors):  # a bancada só lê os encoders da perna (a IMU do tronco nêo mexe: a pelve está presa)
         s.delete(sen)
     if historico:
         for a in s.actuators:
@@ -178,7 +178,7 @@ def spec_bancada(pol, mundo=None, historico=0):
 
 
 def sinal_bancada(m, pol, seg=4.0, fase=0.0):
-    """Alvo de posição de cada junta a cada passo: pose padrão + varredura de frequência (0,5 → 3 Hz) na perna."""
+    """Alvo de posiçêo de cada junta a cada passo: pose padrêo + varredura de frequência (0,5 → 3 Hz) na perna."""
     n = int(round(seg / m.opt.timestep))
     t = np.arange(n) * m.opt.timestep
     f = 0.5 + (3.0 - 0.5) * t / seg
@@ -220,8 +220,8 @@ def rodar(m, pol, cmd=(0.5, 0.0, 0.0), seg=10.0, empurrao=0.0, t_emp=3.0, dur_em
           compensar=None, registrar=False):
     """Roda a política por `seg` segundos. Queda = pelve abaixo de 0,5 m.
 
-    empurrao: força (N) no tronco por dur_emp s a partir de t_emp, na direção dir_emp (graus; 0 = para a frente).
-    compensar(alvo, q, dq) -> alvo: correção aplicada ao comando antes de mandar ao robô (aula 5).
+    empurrao: força (N) no tronco por dur_emp s a partir de t_emp, na direçêo dir_emp (graus; 0 = para a frente).
+    compensar(alvo, q, dq) -> alvo: correçêo aplicada ao comando antes de mandar ao robô (aula 5).
     """
     pol.reset()
     d = iniciar(m, pol)
@@ -257,7 +257,7 @@ def rodar(m, pol, cmd=(0.5, 0.0, 0.0), seg=10.0, empurrao=0.0, t_emp=3.0, dur_em
     t = d.time
     r = {"caiu": caiu, "t": t, "x": float(d.qpos[0]), "y": float(d.qpos[1]),
          "vel": float(d.qpos[0] / t) if t > 0 else 0.0, "torque_max": tq_max,
-         "saturado": sat / max(passos, 1)}  # fração do tempo no limite, por motor
+         "saturado": sat / max(passos, 1)}  # fraçêo do tempo no limite, por motor
     if registrar:
         r["log"] = {k: np.array(v) for k, v in log.items()}
     return r
@@ -266,7 +266,7 @@ def rodar(m, pol, cmd=(0.5, 0.0, 0.0), seg=10.0, empurrao=0.0, t_emp=3.0, dur_em
 def resumo(r, cmd=0.5):
     if r["caiu"] is not None:
         return f"queda: sim em t = {r['caiu']:.1f} s (andou {r['x']:.1f} m)"
-    return f"queda: não · andou {r['x']:.1f} m em {r['t']:.0f} s (vel. {r['vel']:.2f} m/s; pedida {cmd:.2f})"
+    return f"queda: nêo · andou {r['x']:.1f} m em {r['t']:.0f} s (vel. {r['vel']:.2f} m/s; pedida {cmd:.2f})"
 
 
 def replay_bancada(pol, L, mundo=None, delta=None, vetor=False):
@@ -295,8 +295,8 @@ def replay_bancada(pol, L, mundo=None, delta=None, vetor=False):
 def iniciar_dds(dominio=1, interface="lo"):
     """Abre o DDS da Unitree (unitree_sdk2py) no domínio e na interface dados.
 
-    A interface lo não faz multicast; sem multicast, dois processos não se descobrem. Aqui a descoberta vai por
-    unicast para 127.0.0.1 (bloco Discovery/Peers da configuração do CycloneDDS), só quando a interface é lo."""
+    A interface lo nêo faz multicast; sem multicast, dois processos nêo se descobrem. Aqui a descoberta vai por
+    unicast para 127.0.0.1 (bloco Discovery/Peers da configuraçêo do CycloneDDS), só quando a interface é lo."""
     import unitree_sdk2py.core.channel as ch
     if interface == "lo" and "<Peers>" not in ch.ChannelConfigHasInterface:
         ch.ChannelConfigHasInterface = ch.ChannelConfigHasInterface.replace(

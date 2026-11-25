@@ -5,8 +5,8 @@
   "titulo": "Corrigir com dados do robô: delta action e afins",
   "titulo_curto": "Corrigir com dados (delta action)",
   "minutos": 15,
-  "lead": "Às vezes o gap não cabe em dois parâmetros. A ideia do ASAP (RSS 2025) é aprender a ação que falta: um modelo que, somado ao comando dentro do simulador, faz ele repetir o que o robô real fez. Nesta aula você ajusta uma versão mínima dessa ideia com o log da bancada e mede o erro do simulador antes e depois.",
-  "objetivo": "corrigir o simulador com dados do robô por um modelo de ação delta e medir o erro de rastreio sim × real antes e depois.",
+  "lead": "Às vezes o gap nêo cabe em dois parâmetros. A ideia do ASAP (RSS 2025) é aprender a açêo que falta: um modelo que, somado ao comando dentro do simulador, faz ele repetir o que o robô real fez. Nesta aula você ajusta uma versêo mínima dessa ideia com o log da bancada e mede o erro do simulador antes e depois.",
+  "objetivo": "corrigir o simulador com dados do robô por um modelo de açêo delta e medir o erro de rastreio sim × real antes e depois.",
   "competencias": [
     "explicar-delta-action",
     "ajustar-modelo-de-correcao",
@@ -30,12 +30,12 @@
       "t": "Quando usar sysid, quando usar delta action"
     }
   ],
-  "hero_alt": "Mãos num teclado diante de dois monitores com curvas de trajetória e um robô simulado, com um robô humanoide suspenso no pórtico ao fundo.",
+  "hero_alt": "Mêos num teclado diante de dois monitores com curvas de trajetória e um robô simulado, com um robô humanoide suspenso no pórtico ao fundo.",
   "secoes": [
     {
       "tipo": "diagrama",
       "titulo": "O ciclo do ASAP",
-      "sub": "Clique em cada bloco. As quatro etapas estão no README do LeCAR-Lab/ASAP.",
+      "sub": "Clique em cada bloco. As quatro etapas estêo no README do LeCAR-Lab/ASAP.",
       "volta": "repete se o gap persistir",
       "nos": [
         {
@@ -58,7 +58,7 @@
           "itens": [
             {
               "icone": "lista",
-              "t": "estado + ação"
+              "t": "estado + açêo"
             }
           ]
         },
@@ -67,7 +67,7 @@
           "titulo": "Delta",
           "sub": "modelo",
           "forte": true,
-          "detalhe": "Aprende uma ação corretiva δ(s, a) que, somada ao comando dentro do simulador, faz o sim reproduzir as trajetórias reais. No ASAP é uma rede treinada por RL.",
+          "detalhe": "Aprende uma açêo corretiva δ(s, a) que, somada ao comando dentro do simulador, faz o sim reproduzir as trajetórias reais. No ASAP é uma rede treinada por RL.",
           "itens": [
             {
               "icone": "lista",
@@ -92,7 +92,7 @@
     },
     {
       "tipo": "passos",
-      "titulo": "O brinquedo do kit (e o que ele não é)",
+      "titulo": "O brinquedo do kit (e o que ele nêo é)",
       "sub": "delta.py, com o log.npz da aula 3. Clique em cada etapa.",
       "passos": [
         {
@@ -107,22 +107,22 @@
           "titulo": "O ajuste",
           "sub": "trajetória inteira",
           "texto": [
-            "<code>mujoco.minimize.least_squares</code> procura os 8 números que fazem o simulador, repetindo o comando do log com a correção, chegar às posições que o robô mediu.",
-            "Comparar a trajetória inteira, e não um passo de cada vez, evita que o atraso escondido confunda o ajuste."
+            "<code>mujoco.minimize.least_squares</code> procura os 8 números que fazem o simulador, repetindo o comando do log com a correçêo, chegar às posições que o robô mediu.",
+            "Comparar a trajetória inteira, e nêo um passo de cada vez, evita que o atraso escondido confunda o ajuste."
           ]
         },
         {
           "titulo": "O resultado",
           "sub": "a ≈ −0,5 a −0,7",
           "texto": [
-            "a negativo puxa o alvo para perto da posição atual: é o simulador imitando um motor mais mole e mais lento. Juntando o kp de 0,6 e o atraso de 20 ms, faz sentido."
+            "a negativo puxa o alvo para perto da posiçêo atual: é o simulador imitando um motor mais mole e mais lento. Juntando o kp de 0,6 e o atraso de 20 ms, faz sentido."
           ]
         },
         {
-          "titulo": "O que não é",
+          "titulo": "O que nêo é",
           "sub": "honestidade",
           "texto": [
-            "Não é o ASAP: lá o modelo delta é uma rede com o estado inteiro, treinada por RL em GPU, e a política é ajustada depois. Aqui são 8 coeficientes e nenhum retreino.",
+            "Nêo é o ASAP: lá o modelo delta é uma rede com o estado inteiro, treinada por RL em GPU, e a política é ajustada depois. Aqui sêo 8 coeficientes e nenhum retreino.",
             "Serve para ver a ideia funcionando em CPU e em minutos."
           ]
         }
@@ -130,8 +130,8 @@
     },
     {
       "tipo": "codigo",
-      "titulo": "Ajustar a correção",
-      "sub": "Usa o mesmo log.npz da aula 3. Leva de 1 a 2 minutos em CPU (cada avaliação repete os 4 s do ensaio).",
+      "titulo": "Ajustar a correçêo",
+      "sub": "Usa o mesmo log.npz da aula 3. Leva de 1 a 2 minutos em CPU (cada avaliaçêo repete os 4 s do ensaio).",
       "blocos": [
         {
           "rot": "Terminal · delta action (brinquedo linear)",
@@ -144,11 +144,11 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>log: ~/fth/log.npz · correção recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta\n  left_hip_pitch     a = -0.66  b = -0.013\n  left_hip_roll      a = -0.48  b = +0.006\n  left_knee          a = -0.66  b = +0.011\n  left_ankle_pitch   a = -0.71  b = +0.031\nerro de rastreio sim × real: antes 8.16° → depois 3.82° (RMS das posições)\nsaída: 0</pre><p>Antes, o simulador erra as posições da perna em 8,16° (RMS). Com a correção, 3,82°. Sai 0 quando o erro cai.</p>"
+            "html": "<pre>log: ~/fth/log.npz · correçêo recalculada a cada 20 ms · δ = a·(alvo − q) + b·dq por junta\n  left_hip_pitch     a = -0.66  b = -0.013\n  left_hip_roll      a = -0.48  b = +0.006\n  left_knee          a = -0.66  b = +0.011\n  left_ankle_pitch   a = -0.71  b = +0.031\nerro de rastreio sim × real: antes 8.16° → depois 3.82° (RMS das posições)\nsaída: 0</pre><p>Antes, o simulador erra as posições da perna em 8,16° (RMS). Com a correçêo, 3,82°. Sai 0 quando o erro cai.</p>"
           },
           {
             "rot": "Erro comum: um passo de cada vez",
-            "html": "<p>A primeira versão deste script ajustava δ trecho a trecho (20 ms), linearizando o simulador em cada trecho, e o erro piorou em vez de cair. O atraso de 20 ms faz um trecho isolado parecer um motor ainda mais mole, e a correção exagera. Ajustar contra a trajetória inteira resolveu: confira sempre o erro depois da correção, nunca só o ajuste.</p>"
+            "html": "<p>A primeira versêo deste script ajustava δ trecho a trecho (20 ms), linearizando o simulador em cada trecho, e o erro piorou em vez de cair. O atraso de 20 ms faz um trecho isolado parecer um motor ainda mais mole, e a correçêo exagera. Ajustar contra a trajetória inteira resolveu: confira sempre o erro depois da correçêo, nunca só o ajuste.</p>"
           }
         ]
       }
@@ -162,7 +162,7 @@
           "id": "e1",
           "titulo": "E1 · Erro antes e depois",
           "min": "3 min",
-          "texto": "Rode a correção com o log da aula 3.",
+          "texto": "Rode a correçêo com o log da aula 3.",
           "pronto": "<code>python3 kit/delta.py ~/fth/log.npz; echo \"saída: $?\"</code> → <code>erro de rastreio sim × real: antes 8.16° → depois 3.82°</code> e <code>saída: 0</code>."
         },
         {
@@ -176,7 +176,7 @@
           "id": "e3",
           "titulo": "E3 · Sysid ou delta?",
           "min": "5 min",
-          "texto": "Para cada caso, escreva qual você usaria: (1) a bateria nova deixou o robô 2 kg mais pesado; (2) a transmissão do joelho tem folga que muda com a temperatura.",
+          "texto": "Para cada caso, escreva qual você usaria: (1) a bateria nova deixou o robô 2 kg mais pesado; (2) a transmissêo do joelho tem folga que muda com a temperatura.",
           "pronto": "(1) sysid/medir a massa; (2) delta action ou actuator network, com o motivo em uma frase cada."
         }
       ]
@@ -184,7 +184,7 @@
     {
       "tipo": "quiz",
       "titulo": "Teste da aula",
-      "sub": "A explicação aparece depois da sua resposta.",
+      "sub": "A explicaçêo aparece depois da sua resposta.",
       "perguntas": [
         {
           "p": "No ASAP, para que serve o modelo de delta action?",
@@ -195,7 +195,7 @@
             "Para aumentar o kp dos motores no deploy."
           ],
           "certa": 1,
-          "explica": "Ele corrige o simulador, não o robô. Com o sim corrigido, a política é ajustada de novo e volta ao robô.",
+          "explica": "Ele corrige o simulador, nêo o robô. Com o sim corrigido, a política é ajustada de novo e volta ao robô.",
           "ref": "diagrama",
           "cert": true
         },
@@ -203,12 +203,12 @@
           "p": "O delta.py ajusta 8 coeficientes. O que o separa do ASAP de verdade?",
           "opcoes": [
             "Nada: o ASAP também usa um modelo linear por junta.",
-            "O ASAP não precisa de dados do robô real.",
+            "O ASAP nêo precisa de dados do robô real.",
             "O ASAP usa o mesmo modelo, mas só no MuJoCo.",
             "Lá é uma rede treinada por RL e a política é retreinada."
           ],
           "certa": 3,
-          "explica": "O kit mostra a ideia em pequeno e em CPU. Dizer o que ele não é faz parte do método.",
+          "explica": "O kit mostra a ideia em pequeno e em CPU. Dizer o que ele nêo é faz parte do método.",
           "ref": "passos"
         },
         {
@@ -231,7 +231,7 @@
       "itens": [
         {
           "t": "Ideia",
-          "texto": "Delta action aprende a ação que falta para o simulador imitar o robô."
+          "texto": "Delta action aprende a açêo que falta para o simulador imitar o robô."
         },
         {
           "t": "Medida",
@@ -258,7 +258,7 @@
           "icone": "arquivo"
         },
         {
-          "t": "vla-v72, aula 7: RL depois da imitação",
+          "t": "vla-v72, aula 7: RL depois da imitaçêo",
           "href": "https://linnoff88-dev.github.io/
           "icone": "seta"
         }

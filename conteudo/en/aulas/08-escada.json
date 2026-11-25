@@ -54,7 +54,7 @@
           "icone": "portao",
           "titulo": "Sim2sim",
           "sub": "gate",
-          "detalhe": "Another robot model and the manufacturer's DDS message path (lesson 6). Criterion: PORTÃO: passou (3 de 3 etapas).",
+          "detalhe": "Another robot model and the manufacturer's DDS message path (lesson 6). Criterion: PORTêO: passou (3 de 3 etapas).",
           "itens": [
             {
               "icone": "lista",
@@ -128,7 +128,7 @@
         {
           "rot": "File · kit/escada-modelo.yaml",
           "icone": "arquivo",
-          "conteudo": "# escada.yaml — the deployment ladder for your policy (FTH 2, lesson 8)\n# Each step: what runs, the criterion to move up (command → expected output) and when to stop and go back.\npolitica: unitree_rl_lab G1 29 GDL velocity v0 (ONNX)\nrobo: Unitree G1 EDU (29 GDL)\ndegraus:\n  - nome: sim\n    onde: MuJoCo 3.16 + G1 do Menagerie, com as faixas de randomização do treino\n    criterio: \"python3 kit/randomizar.py --seeds 20 --faixa treino → sobreviveu: 20/20\"\n    parar_se: qualquer queda dentro da faixa do treino\n  - nome: sim2sim\n    onde: outro MJCF (unitree_mujoco) e o caminho de mensagens do robô (DDS, rt/lowcmd e rt/lowstate)\n    criterio: \"python3 kit/portao_sim2sim.py --passo 0.001 --dds → PORTÃO: passou (3 de 3 etapas)\"\n    parar_se: queda, velocidade fora de ±0,15 m/s, pernas no limite de torque ou política abaixo de 45 Hz\n  - nome: suspenso\n    onde: robô no pórtico, pés fora do chão, elástico ou cabo de segurança\n    criterio: \"ensaio de bancada + sysid → kp identificado e atraso medido; a política mexe as pernas sem bater no limite\"\n    parar_se: junta batendo no limite, vibração, temperatura subindo, atraso maior que o simulado\n  - nome: chão\n    onde: piso plano, área isolada, cabo frouxo no pórtico, pessoa no botão de parada\n    criterio: \"teste no chão → 10 s parado + 10 s a 0,3 m/s sem queda, três vezes seguidas\"\n    parar_se: tropeço, queda, qualquer pessoa dentro da área"
+          "conteudo": "# escada.yaml — the deployment ladder for your policy (FTH 2, lesson 8)\n# Each step: what runs, the criterion to move up (command → expected output) and when to stop and go back.\npolitica: unitree_rl_lab G1 29 GDL velocity v0 (ONNX)\nrobo: Unitree G1 EDU (29 GDL)\ndegraus:\n  - nome: sim\n    onde: MuJoCo 3.16 + G1 do Menagerie, com as faixas de randomizaçêo do treino\n    criterio: \"python3 kit/randomizar.py --seeds 20 --faixa treino → sobreviveu: 20/20\"\n    parar_se: qualquer queda dentro da faixa do treino\n  - nome: sim2sim\n    onde: outro MJCF (unitree_mujoco) e o caminho de mensagens do robô (DDS, rt/lowcmd e rt/lowstate)\n    criterio: \"python3 kit/portao_sim2sim.py --passo 0.001 --dds → PORTêO: passou (3 de 3 etapas)\"\n    parar_se: queda, velocidade fora de ±0,15 m/s, pernas no limite de torque ou política abaixo de 45 Hz\n  - nome: suspenso\n    onde: robô no pórtico, pés fora do chêo, elástico ou cabo de segurança\n    criterio: \"ensaio de bancada + sysid → kp identificado e atraso medido; a política mexe as pernas sem bater no limite\"\n    parar_se: junta batendo no limite, vibraçêo, temperatura subindo, atraso maior que o simulado\n  - nome: chêo\n    onde: piso plano, área isolada, cabo frouxo no pórtico, pessoa no botêo de parada\n    criterio: \"teste no chêo → 10 s parado + 10 s a 0,3 m/s sem queda, três vezes seguidas\"\n    parar_se: tropeço, queda, qualquer pessoa dentro da área"
         },
         {
           "rot": "Terminal · check the ladder",
@@ -150,7 +150,7 @@
           },
           {
             "rot": "Common mistake: no \"parar_se\"",
-            "html": "<pre>ERRO: degrau 'chão' sem parar_se\n4 degraus, 4 critérios · 1 problema(s)\nsaída: 1</pre><p>A step with no stop condition is the most expensive mistake: on the floor, it's what tells you when to press the button. The script fails it.</p>"
+            "html": "<pre>ERRO: degrau 'chêo' sem parar_se\n4 degraus, 4 critérios · 1 problema(s)\nsaída: 1</pre><p>A step with no stop condition is the most expensive mistake: on the floor, it's what tells you when to press the button. The script fails it.</p>"
           }
         ]
       }

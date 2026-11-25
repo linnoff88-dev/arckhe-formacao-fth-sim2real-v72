@@ -160,7 +160,7 @@
           },
           {
             "rot": "Error común: sin la policy",
-            "html": "<pre>ERRO: não achei /tmp/sem-bancada/unitree_rl_lab/deploy/robots/g1_29dof/config/policy/velocity/v0/exported/policy.onnx. Rode a preparação da aula 1 (unitree_rl_lab no sparse-checkout).\nsaída: 1</pre><p>Los scripts buscan todo en ~/fth (o en la carpeta de la variable <code>FTH</code>). Si la preparación no se ejecutó, el error indica la ruta que faltó.</p>"
+            "html": "<pre>ERRO: nêo achei /tmp/sem-bancada/unitree_rl_lab/deploy/robots/g1_29dof/config/policy/velocity/v0/exported/policy.onnx. Rode a preparaçêo da aula 1 (unitree_rl_lab no sparse-checkout).\nsaída: 1</pre><p>Los scripts buscan todo en ~/fth (o en la carpeta de la variable <code>FTH</code>). Si la preparación no se ejecutó, el error indica la ruta que faltó.</p>"
           }
         ]
       }
@@ -186,11 +186,11 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>política: unitree_rl_lab G1 29 GDL velocity v0 (ONNX, 480 entradas) · comando 0.50 m/s · 10 s\nsim                          queda: não · andou 4.7 m em 10 s (vel. 0.47 m/s; pedida 0.50)\nreal simulado                queda: sim em t = 2.3 s (andou 1.9 m)\nsaída: 1</pre><p>En el sim, 4,7 m en 10 s (0,47 m/s para 0,50 pedidos). En el \"real simulado\", caída a los 2,3 s.</p>"
+            "html": "<pre>política: unitree_rl_lab G1 29 GDL velocity v0 (ONNX, 480 entradas) · comando 0.50 m/s · 10 s\nsim                          queda: nêo · andou 4.7 m em 10 s (vel. 0.47 m/s; pedida 0.50)\nreal simulado                queda: sim em t = 2.3 s (andou 1.9 m)\nsaída: 1</pre><p>En el sim, 4,7 m en 10 s (0,47 m/s para 0,50 pedidos). En el \"real simulado\", caída a los 2,3 s.</p>"
           },
           {
             "rot": "Uno por vez",
-            "html": "<pre>real simulado (só atrito)    queda: não · andou 4.7 m em 10 s (vel. 0.47 m/s; pedida 0.50)\nreal simulado (só massa)     queda: não · andou 4.6 m em 10 s (vel. 0.46 m/s; pedida 0.50)\nreal simulado (só kp)        queda: não · andou 7.5 m em 10 s (vel. 0.75 m/s; pedida 0.50)\nreal simulado (só atraso_ms) queda: não · andou 4.6 m em 10 s (vel. 0.46 m/s; pedida 0.50)</pre><p>Ninguno por sí solo derriba la policy. El kp solo hace que el robot camine a 0,75 m/s: el PD más blando deja que las piernas se retrasen, y la policy compensa empujando más.</p>"
+            "html": "<pre>real simulado (só atrito)    queda: nêo · andou 4.7 m em 10 s (vel. 0.47 m/s; pedida 0.50)\nreal simulado (só massa)     queda: nêo · andou 4.6 m em 10 s (vel. 0.46 m/s; pedida 0.50)\nreal simulado (só kp)        queda: nêo · andou 7.5 m em 10 s (vel. 0.75 m/s; pedida 0.50)\nreal simulado (só atraso_ms) queda: nêo · andou 4.6 m em 10 s (vel. 0.46 m/s; pedida 0.50)</pre><p>Ninguno por sí solo derriba la policy. El kp solo hace que el robot camine a 0,75 m/s: el PD más blando deja que las piernas se retrasen, y la policy compensa empujando más.</p>"
           }
         ]
       }
@@ -219,7 +219,7 @@
           "titulo": "E3 · Encuentra al culpable",
           "min": "5 min",
           "texto": "Ejecuta el bucle \"un parámetro a la vez\" y escribe qué parámetro, por sí solo, cambia más el comportamiento y qué cambia.",
-          "pronto": "las 4 líneas muestran <code>queda: não</code> y la del kp muestra <code>vel. 0.75 m/s; pedida 0.50</code>; escribiste \"ninguno la tumba solo; el kp cambia la velocidad\"."
+          "pronto": "las 4 líneas muestran <code>queda: nêo</code> y la del kp muestra <code>vel. 0.75 m/s; pedida 0.50</code>; escribiste \"ninguno la tumba solo; el kp cambia la velocidad\"."
         }
       ]
     },

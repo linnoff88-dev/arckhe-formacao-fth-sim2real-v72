@@ -2,11 +2,11 @@
   "slug": "escada",
   "num": 8,
   "menu": "Escalera",
-  "titulo": "La escalera de despliegue: sim → sim2sim → suspenso → chão",
+  "titulo": "La escalera de despliegue: sim → sim2sim → suspenso → chêo",
   "titulo_curto": "La escalera hasta el suelo",
   "minutos": 13,
   "lead": "Todo lo de este curso se convierte en un plan: cuatro niveles, cada uno con lo que corre, el criterio para subir y el motivo para parar y volver. En esta clase escribes tu escalera en un archivo YAML, la verificas con un script y simulas la cola de niveles con una falla en el medio. El procedimiento de seguridad con el robot encendido es del curso 4.",
-  "objetivo": "escribir la escalera sim → sim2sim → suspenso → chão con criterio de paso y de parada en cada nivel y verificarla por script.",
+  "objetivo": "escribir la escalera sim → sim2sim → suspenso → chêo con criterio de paso y de parada en cada nivel y verificarla por script.",
   "competencias": [
     "planejar-escada-de-implantacao",
     "escrever-criterio-verificavel",
@@ -54,7 +54,7 @@
           "icone": "portao",
           "titulo": "Sim2sim",
           "sub": "compuerta (gate)",
-          "detalhe": "Otro modelo del robot y el camino DDS de mensajes del fabricante (clase 6). Criterio: PORTÃO: passou (3 de 3 etapas).",
+          "detalhe": "Otro modelo del robot y el camino DDS de mensajes del fabricante (clase 6). Criterio: PORTêO: passou (3 de 3 etapas).",
           "itens": [
             {
               "icone": "lista",
@@ -128,7 +128,7 @@
         {
           "rot": "Archivo · kit/escada-modelo.yaml",
           "icone": "arquivo",
-          "conteudo": "# escada.yaml — la escalera de despliegue de tu política (FTH 2, clase 8)\n# Cada nivel: qué se ejecuta, el criterio para subir (comando → salida esperada) y cuándo parar y volver.\npolitica: unitree_rl_lab G1 29 GDL velocity v0 (ONNX)\nrobo: Unitree G1 EDU (29 GDL)\ndegraus:\n  - nome: sim\n    onde: MuJoCo 3.16 + G1 do Menagerie, com as faixas de randomização do treino\n    criterio: \"python3 kit/randomizar.py --seeds 20 --faixa treino → sobreviveu: 20/20\"\n    parar_se: qualquer queda dentro da faixa do treino\n  - nome: sim2sim\n    onde: outro MJCF (unitree_mujoco) e o caminho de mensagens do robô (DDS, rt/lowcmd e rt/lowstate)\n    criterio: \"python3 kit/portao_sim2sim.py --passo 0.001 --dds → PORTÃO: passou (3 de 3 etapas)\"\n    parar_se: queda, velocidade fora de ±0,15 m/s, pernas no limite de torque ou política abaixo de 45 Hz\n  - nome: suspenso\n    onde: robô no pórtico, pés fora do chão, elástico ou cabo de segurança\n    criterio: \"ensaio de bancada + sysid → kp identificado e atraso medido; a política mexe as pernas sem bater no limite\"\n    parar_se: junta batendo no limite, vibração, temperatura subindo, atraso maior que o simulado\n  - nome: chao\n    onde: piso plano, área isolada, cabo frouxo no pórtico, pessoa no botão de parada\n    criterio: \"teste no chão → 10 s parado + 10 s a 0,3 m/s sem queda, três vezes seguidas\"\n    parar_se: tropeço, queda, qualquer pessoa dentro da área"
+          "conteudo": "# escada.yaml — la escalera de despliegue de tu política (FTH 2, clase 8)\n# Cada nivel: qué se ejecuta, el criterio para subir (comando → salida esperada) y cuándo parar y volver.\npolitica: unitree_rl_lab G1 29 GDL velocity v0 (ONNX)\nrobo: Unitree G1 EDU (29 GDL)\ndegraus:\n  - nome: sim\n    onde: MuJoCo 3.16 + G1 do Menagerie, com as faixas de randomizaçêo do treino\n    criterio: \"python3 kit/randomizar.py --seeds 20 --faixa treino → sobreviveu: 20/20\"\n    parar_se: qualquer queda dentro da faixa do treino\n  - nome: sim2sim\n    onde: outro MJCF (unitree_mujoco) e o caminho de mensagens do robô (DDS, rt/lowcmd e rt/lowstate)\n    criterio: \"python3 kit/portao_sim2sim.py --passo 0.001 --dds → PORTêO: passou (3 de 3 etapas)\"\n    parar_se: queda, velocidade fora de ±0,15 m/s, pernas no limite de torque ou política abaixo de 45 Hz\n  - nome: suspenso\n    onde: robô no pórtico, pés fora do chêo, elástico ou cabo de segurança\n    criterio: \"ensaio de bancada + sysid → kp identificado e atraso medido; a política mexe as pernas sem bater no limite\"\n    parar_se: junta batendo no limite, vibraçêo, temperatura subindo, atraso maior que o simulado\n  - nome: chao\n    onde: piso plano, área isolada, cabo frouxo no pórtico, pessoa no botêo de parada\n    criterio: \"teste no chêo → 10 s parado + 10 s a 0,3 m/s sem queda, três vezes seguidas\"\n    parar_se: tropeço, queda, qualquer pessoa dentro da área"
         },
         {
           "rot": "Terminal · verificar la escalera",
@@ -150,7 +150,7 @@
           },
           {
             "rot": "Error común: sin \"parar_se\"",
-            "html": "<pre>ERRO: degrau 'chão' sem parar_se\n4 degraus, 4 critérios · 1 problema(s)\nsaída: 1</pre><p>Un nivel sin condición de parada es el error más caro: en el piso, es lo que te dice cuándo apretar el botón. El script lo reprueba.</p>"
+            "html": "<pre>ERRO: degrau 'chêo' sem parar_se\n4 degraus, 4 critérios · 1 problema(s)\nsaída: 1</pre><p>Un nivel sin condición de parada es el error más caro: en el piso, es lo que te dice cuándo apretar el botón. El script lo reprueba.</p>"
           }
         ]
       }

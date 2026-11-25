@@ -2,10 +2,10 @@
   "slug": "sysid",
   "num": 3,
   "menu": "Sysid",
-  "titulo": "Identificação de sistema: medir para modelar",
-  "titulo_curto": "Identificação de sistema",
+  "titulo": "Identificaçêo de sistema: medir para modelar",
+  "titulo_curto": "Identificaçêo de sistema",
   "minutos": 17,
-  "lead": "Randomizar cobre o que você não sabe; identificar diminui o que você não sabe. Nesta aula você pendura o \"robô real\" no pórtico, faz a perna balançar numa varredura de frequência, grava os encoders e usa o toolbox de identificação de sistema do próprio MuJoCo para descobrir o kp e o kd que o motor entrega de verdade.",
+  "lead": "Randomizar cobre o que você nêo sabe; identificar diminui o que você nêo sabe. Nesta aula você pendura o \"robô real\" no pórtico, faz a perna balançar numa varredura de frequência, grava os encoders e usa o toolbox de identificaçêo de sistema do próprio MuJoCo para descobrir o kp e o kd que o motor entrega de verdade.",
   "objetivo": "identificar o kp e o kd do atuador num ensaio de bancada com o toolbox mujoco.sysid e conferir contra o valor escondido.",
   "competencias": [
     "planejar-ensaio-de-bancada",
@@ -30,7 +30,7 @@
       "t": "Por que identificar só o kp dá errado quando falta algo no modelo"
     }
   ],
-  "hero_alt": "Robô humanoide suspenso por cintas num pórtico de aço, pés fora do chão, com cabos ligando a perna a um equipamento de medição.",
+  "hero_alt": "Robô humanoide suspenso por cintas num pórtico de aço, pés fora do chêo, com cabos ligando a perna a um equipamento de mediçêo.",
   "secoes": [
     {
       "tipo": "diagrama",
@@ -41,7 +41,7 @@
           "icone": "robo",
           "titulo": "Pórtico",
           "sub": "pés no ar",
-          "detalhe": "Robô suspenso: a perna se mexe sem contato com o chão. Assim o ensaio mede o atuador e a perna, sem misturar atrito do pé nem equilíbrio. É também o degrau seguro da escada (aula 8).",
+          "detalhe": "Robô suspenso: a perna se mexe sem contato com o chêo. Assim o ensaio mede o atuador e a perna, sem misturar atrito do pé nem equilíbrio. É também o degrau seguro da escada (aula 8).",
           "itens": [
             {
               "icone": "lista",
@@ -65,7 +65,7 @@
           "icone": "arquivo",
           "titulo": "Log",
           "sub": "log.npz",
-          "detalhe": "Comando enviado + posição e velocidade medidas a 500 Hz, com ruído de 0,002 rad e 0,02 rad/s, como um encoder de verdade.",
+          "detalhe": "Comando enviado + posiçêo e velocidade medidas a 500 Hz, com ruído de 0,002 rad e 0,02 rad/s, como um encoder de verdade.",
           "itens": [
             {
               "icone": "lista",
@@ -78,7 +78,7 @@
           "titulo": "Otimizador",
           "sub": "mujoco.sysid",
           "forte": true,
-          "detalhe": "Simula o mesmo comando no modelo nominal, compara com o log e ajusta os parâmetros por mínimos quadrados não lineares até as curvas baterem.",
+          "detalhe": "Simula o mesmo comando no modelo nominal, compara com o log e ajusta os parâmetros por mínimos quadrados nêo lineares até as curvas baterem.",
           "itens": [
             {
               "icone": "lista",
@@ -90,7 +90,7 @@
           "icone": "check",
           "titulo": "Parâmetro",
           "sub": "kp, kd",
-          "detalhe": "O resultado entra no simulador (próximo treino) ou no comando do robô (compensação, aula 4). Confira sempre com um ensaio que não foi usado no ajuste.",
+          "detalhe": "O resultado entra no simulador (próximo treino) ou no comando do robô (compensaçêo, aula 4). Confira sempre com um ensaio que nêo foi usado no ajuste.",
           "itens": [
             {
               "icone": "lista",
@@ -99,7 +99,7 @@
           ]
         }
       ],
-      "legenda": "Cada ensaio identifica o que ele excita. A perna no ar não diz nada sobre o atrito do pé."
+      "legenda": "Cada ensaio identifica o que ele excita. A perna no ar nêo diz nada sobre o atrito do pé."
     },
     {
       "tipo": "passos",
@@ -110,7 +110,7 @@
           "titulo": "Parameter",
           "sub": "o que varia",
           "texto": [
-            "Cada parâmetro tem valor nominal, faixa e uma função que escreve o valor no MjSpec (o modelo editável). No kit: kp e kd multiplicam os ganhos do deploy.yaml nas quatro juntas ensaiadas."
+            "Cada parâmetro tem valor nominal, faixa e uma funçêo que escreve o valor no MjSpec (o modelo editável). No kit: kp e kd multiplicam os ganhos do deploy.yaml nas quatro juntas ensaiadas."
           ]
         },
         {
@@ -132,8 +132,8 @@
           "titulo": "Revelar",
           "sub": "só no ensaio",
           "texto": [
-            "No robô de verdade não existe valor escondido para conferir. Aqui existe: <code>--revelar</code> abre o real.json e diz se você chegou a ±10 %.",
-            "A conferência honesta no robô é outro ensaio, que o ajuste não viu."
+            "No robô de verdade nêo existe valor escondido para conferir. Aqui existe: <code>--revelar</code> abre o real.json e diz se você chegou a ±10 %.",
+            "A conferência honesta no robô é outro ensaio, que o ajuste nêo viu."
           ]
         }
       ]
@@ -162,8 +162,8 @@
             "html": "<pre>ensaio de bancada no mundo 'real': 1999 amostras em 4.0 s · 4 encoders + velocidades\n  enc_left_hip_pitch     amplitude medida  18.6°\n  enc_left_hip_roll      amplitude medida  29.6°\n  enc_left_knee          amplitude medida  50.0°\n  enc_left_ankle_pitch   amplitude medida  19.3°\ngravado: ~/fth/log.npz</pre><p>Quatro juntas, 4 s, 1.999 amostras. O joelho oscila 50° de ponta a ponta.</p>"
           },
           {
-            "rot": "Instalação",
-            "html": "<pre>mujoco.sysid ok: optimize Parameter</pre><p>Sem o extra, <code>mujoco.sysid</code> existe mas não tem <code>optimize</code>: o módulo esconde o que depende do scipy.</p>"
+            "rot": "Instalaçêo",
+            "html": "<pre>mujoco.sysid ok: optimize Parameter</pre><p>Sem o extra, <code>mujoco.sysid</code> existe mas nêo tem <code>optimize</code>: o módulo esconde o que depende do scipy.</p>"
           }
         ]
       }
@@ -194,15 +194,15 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posição e velocidade de 4 juntas)\nresíduo, modelo nominal:       0.034\nresíduo, modelo identificado:  0.014\nerro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.14° (RMS)\nkp         nominal   1.00 → identificado   0.57\nkd         nominal   1.00 → identificado   1.08\nkp         escondido   0.60 · dentro de ±10 %: sim\nkd         escondido   1.00 · dentro de ±10 %: sim\nsaída: 0</pre><p>O kp volta perto de 0,6 (o motor entrega 60 % do ganho mandado) e o kd fica perto de 1,0, porque o \"real\" não mexeu no kd. O erro das posições cai para menos da metade.</p>"
+            "html": "<pre>log: ~/fth/log.npz · 1999 amostras · sinais: 8 (posiçêo e velocidade de 4 juntas)\nresíduo, modelo nominal:       0.034\nresíduo, modelo identificado:  0.014\nerro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.14° (RMS)\nkp         nominal   1.00 → identificado   0.57\nkd         nominal   1.00 → identificado   1.08\nkp         escondido   0.60 · dentro de ±10 %: sim\nkd         escondido   1.00 · dentro de ±10 %: sim\nsaída: 0</pre><p>O kp volta perto de 0,6 (o motor entrega 60 % do ganho mandado) e o kd fica perto de 1,0, porque o \"real\" nêo mexeu no kd. O erro das posições cai para menos da metade.</p>"
           },
           {
             "rot": "Erro comum: identificar só o kp",
-            "html": "<pre>erro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.55° (RMS)\nkp         nominal   1.00 → identificado   0.52\nkp         escondido   0.60 · dentro de ±10 %: não\nsaída: 1</pre><p>Com um parâmetro só, o otimizador põe no kp tudo o que o modelo não explica, inclusive o atraso de 20 ms que a aula 4 mede. Parâmetro que falta no modelo vaza para os outros: dê ao ajuste os graus de liberdade que o ensaio excita.</p>"
+            "html": "<pre>erro das posições na bancada, modelo nominal:       8.16° (RMS)\nerro das posições na bancada, modelo identificado:  3.55° (RMS)\nkp         nominal   1.00 → identificado   0.52\nkp         escondido   0.60 · dentro de ±10 %: nêo\nsaída: 1</pre><p>Com um parâmetro só, o otimizador põe no kp tudo o que o modelo nêo explica, inclusive o atraso de 20 ms que a aula 4 mede. Parâmetro que falta no modelo vaza para os outros: dê ao ajuste os graus de liberdade que o ensaio excita.</p>"
           },
           {
             "rot": "Ensaio no sim",
-            "html": "<pre>gravado: ~/fth/log-sim.npz\nerro das posições na bancada, modelo nominal:       0.11° (RMS)\nerro das posições na bancada, modelo identificado:  0.11° (RMS)\nkp         nominal   1.00 → identificado   1.00\nkd         nominal   1.00 → identificado   1.00</pre><p>No mundo sem diferença escondida, o ajuste não tem o que corrigir: kp e kd ficam em 1,00 e o erro que sobra, 0,11°, é o ruído do encoder (0,002 rad).</p>"
+            "html": "<pre>gravado: ~/fth/log-sim.npz\nerro das posições na bancada, modelo nominal:       0.11° (RMS)\nerro das posições na bancada, modelo identificado:  0.11° (RMS)\nkp         nominal   1.00 → identificado   1.00\nkd         nominal   1.00 → identificado   1.00</pre><p>No mundo sem diferença escondida, o ajuste nêo tem o que corrigir: kp e kd ficam em 1,00 e o erro que sobra, 0,11°, é o ruído do encoder (0,002 rad).</p>"
           }
         ]
       }
@@ -223,7 +223,7 @@
           "id": "e2",
           "titulo": "E2 · kp e kd identificados",
           "min": "5 min",
-          "texto": "Rode a identificação e confira contra o valor escondido.",
+          "texto": "Rode a identificaçêo e confira contra o valor escondido.",
           "pronto": "<code>python3 kit/sysid.py ~/fth/log.npz --revelar; echo \"saída: $?\"</code> → a linha do kp termina em <code>dentro de ±10 %: sim</code> (escondido 0.60) e <code>saída: 0</code>."
         },
         {
@@ -238,12 +238,12 @@
     {
       "tipo": "quiz",
       "titulo": "Teste da aula",
-      "sub": "A explicação aparece depois da sua resposta.",
+      "sub": "A explicaçêo aparece depois da sua resposta.",
       "perguntas": [
         {
           "p": "Por que o ensaio é feito com o robô pendurado no pórtico?",
           "opcoes": [
-            "Porque o MuJoCo não simula o contato do pé com o chão na bancada.",
+            "Porque o MuJoCo nêo simula o contato do pé com o chêo na bancada.",
             "Para isolar perna e atuador, sem atrito do pé nem equilíbrio.",
             "Porque o sysid só aceita juntas sem gravidade.",
             "Para o robô andar mais rápido durante o ensaio."
@@ -258,11 +258,11 @@
           "opcoes": [
             "O kd escondido também era 0,52, e o ajuste trocou os dois.",
             "O ruído do encoder sempre puxa o kp para baixo.",
-            "O modelo sem atraso jogou no kp o que não conseguia explicar.",
+            "O modelo sem atraso jogou no kp o que nêo conseguia explicar.",
             "O toolbox tem um erro conhecido quando ajusta um parâmetro sozinho."
           ],
           "certa": 2,
-          "explica": "Faltando o atraso no modelo, o ajuste compensa com o que pode mexer. Com o kd livre, o kp sobra mais limpo. Identificabilidade é sobre o modelo, não só sobre os dados.",
+          "explica": "Faltando o atraso no modelo, o ajuste compensa com o que pode mexer. Com o kd livre, o kp sobra mais limpo. Identificabilidade é sobre o modelo, nêo só sobre os dados.",
           "ref": "codigo"
         },
         {
@@ -271,7 +271,7 @@
             "Abrindo o arquivo de parâmetros escondidos do fabricante.",
             "Repetindo o mesmo ensaio usado no ajuste e vendo o erro cair.",
             "Comparando com o kp do deploy.yaml, que é o valor certo.",
-            "Com um ensaio novo, que o ajuste não viu, e o erro dele."
+            "Com um ensaio novo, que o ajuste nêo viu, e o erro dele."
           ],
           "certa": 3,
           "explica": "O mesmo ensaio sempre melhora depois do ajuste. Só um ensaio diferente (outra frequência, outra junta) mostra se o parâmetro generaliza.",
@@ -302,7 +302,7 @@
       "titulo": "Para ir além",
       "links": [
         {
-          "t": "MuJoCo: changelog (3.5.0 traz o toolbox de identificação e os atrasos)",
+          "t": "MuJoCo: changelog (3.5.0 traz o toolbox de identificaçêo e os atrasos)",
           "href": "https://mujoco.readthedocs.io/en/stable/changelog.html",
           "icone": "arquivo"
         },
