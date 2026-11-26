@@ -148,7 +148,7 @@
         {
           "rot": "Terminal · preparar ~/fth",
           "icone": "terminal",
-          "conteudo": "F=${FTH:-$HOME/fth}; mkdir -p $F && cd $F\n[ -d .venv ] || python3.12 -m venv .venv\n. .venv/bin/activate && pip install -q mujoco==3.16.0 numpy onnxruntime==1.31.0 pyyaml\n[ -d sim2real ] || git clone -q --depth 1 https://github.com/inematds/formacao-fth-sim2real-v72 sim2real\n[ -d mujoco_menagerie ] || git clone -q --filter=blob:none --sparse https://github.com/google-deepmind/mujoco_menagerie\ngit -C mujoco_menagerie sparse-checkout add unitree_g1 && git -C mujoco_menagerie checkout -q 62ab00f\n[ -d unitree_rl_lab ] || git clone -q --filter=blob:none --sparse https://github.com/unitreerobotics/unitree_rl_lab\ngit -C unitree_rl_lab sparse-checkout set deploy/robots/g1_29dof/config/policy/velocity\ngit -C unitree_rl_lab checkout -q 4960b84 && git -C unitree_rl_lab log -1 --format='unitree_rl_lab %h (%ad)' --date=short\npython3 -c \"import mujoco, onnxruntime; print('mujoco', mujoco.__version__, '· onnxruntime', onnxruntime.__version__)\""
+          "conteudo": "F=${FTH:-$HOME/fth}; mkdir -p $F && cd $F\n[ -d .venv ] || python3.12 -m venv .venv\n. .venv/bin/activate && pip install -q mujoco==3.16.0 numpy onnxruntime==1.31.0 pyyaml\n[ -d sim2real ] || git clone -q --depth 1 https://github.com/linnoff88-dev/formacao-fth-sim2real-v72 sim2real\n[ -d mujoco_menagerie ] || git clone -q --filter=blob:none --sparse https://github.com/google-deepmind/mujoco_menagerie\ngit -C mujoco_menagerie sparse-checkout add unitree_g1 && git -C mujoco_menagerie checkout -q 62ab00f\n[ -d unitree_rl_lab ] || git clone -q --filter=blob:none --sparse https://github.com/unitreerobotics/unitree_rl_lab\ngit -C unitree_rl_lab sparse-checkout set deploy/robots/g1_29dof/config/policy/velocity\ngit -C unitree_rl_lab checkout -q 4960b84 && git -C unitree_rl_lab log -1 --format='unitree_rl_lab %h (%ad)' --date=short\npython3 -c \"import mujoco, onnxruntime; print('mujoco', mujoco.__version__, '· onnxruntime', onnxruntime.__version__)\""
         }
       ],
       "saida": {
@@ -296,12 +296,12 @@
         },
         {
           "t": "vla-v72, aula 6: avaliar em simulaçêo e o conceito de reality gap",
-          "href": "https://inematds.github.io/vla-v72/aulas/simulacao/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/aulas/simulacao/",
           "icone": "seta"
         },
         {
           "t": "Curso anterior da FTH: ensinar a andar por RL",
-          "href": "https://inematds.github.io/formacao-fth-locomocao-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "robo"
         },
         {

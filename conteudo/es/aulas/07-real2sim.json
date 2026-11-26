@@ -132,7 +132,7 @@
         {
           "rot": "Terminal · gemelo de la mesa",
           "icone": "terminal",
-          "conteudo": "F=${FTH:-$HOME/fth}; cd $F && . .venv/bin/activate && pip install -q pillow imageio\ngit -C mujoco_menagerie sparse-checkout add franka_emika_panda\n[ -d robotica-real2sim ] || git clone -q https://github.com/inematds/robotica-real2sim\ngit -C robotica-real2sim checkout -q 3a08537 && mkdir -p robotica-real2sim/vendor\nln -sfn $F/mujoco_menagerie robotica-real2sim/vendor/menagerie\ncd robotica-real2sim && python3 r2s.py ver exemplos/mesa-foto/cena.json $F/gemeo.png --camera cima\npython3 $F/sim2real/kit/gemeo.py exemplos/mesa-foto/cena.json $F/gemeo.png"
+          "conteudo": "F=${FTH:-$HOME/fth}; cd $F && . .venv/bin/activate && pip install -q pillow imageio\ngit -C mujoco_menagerie sparse-checkout add franka_emika_panda\n[ -d robotica-real2sim ] || git clone -q https://github.com/linnoff88-dev/robotica-real2sim\ngit -C robotica-real2sim checkout -q 3a08537 && mkdir -p robotica-real2sim/vendor\nln -sfn $F/mujoco_menagerie robotica-real2sim/vendor/menagerie\ncd robotica-real2sim && python3 r2s.py ver exemplos/mesa-foto/cena.json $F/gemeo.png --camera cima\npython3 $F/sim2real/kit/gemeo.py exemplos/mesa-foto/cena.json $F/gemeo.png"
         },
         {
           "rot": "Terminal · probar el plan (20 variaciones)",
@@ -260,7 +260,7 @@
       "links": [
         {
           "t": "robotica-real2sim: la guía (dueña del tema)",
-          "href": "https://inematds.github.io/robotica-real2sim/guia/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/guia/",
           "icone": "seta"
         },
         {

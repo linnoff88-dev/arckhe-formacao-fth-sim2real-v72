@@ -1,12 +1,12 @@
 {
   "id": "formacao-fth-sim2real-v72",
   "lang": "es",
-  "url": "https://inematds.github.io/formacao-fth-sim2real-v72/es/",
+  "url": "https://linnoff88-dev.github.io/arckhe-/es/",
   "nome": "FTH 2 · Del simulador al suelo",
   "sub": "Sim-to-real en humanoides",
   "volta": {
-    "t": "INEMA.CLUB",
-    "href": "https://inema.club/"
+    "t": "ARCKHÉ AI",
+    "href": "https://ARCKHÉ AI/"
   },
   "lado_card": {
     "rot": "La policy de las prácticas",
@@ -15,15 +15,15 @@
     "link": "Abrir unitree_rl_lab",
     "href": "https://github.com/unitreerobotics/unitree_rl_lab"
   },
-  "rodape": "INEMA.CLUB · contenido abierto y gratuito · formato INEMA Learning v7.2 · FTH — Formación Tecnológica en Humanoides, curso 2 de 5 · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://github.com/inematds/formacao-fth-sim2real-v72\">kit del curso en GitHub</a>",
+  "rodape": "ARCKHÉ AI · contenido abierto y gratuito · formato ARCKHÉ Learning v7.2 · FTH — Formación Tecnológica en Humanoides, curso 2 de 5 · <a href=\"https://ARCKHÉ AI/\">ARCKHÉ AI</a> · <a href=\"https://github.com/linnoff88-dev/formacao-fth-sim2real-v72\">kit del curso en GitHub</a>",
   "videos": {
     "real2sim": {
       "titulo": "Gemelo digital MuJoCo de la mesa: el brazo toma el cubo (clip de robotica-real2sim)",
       "duracao": "0:10",
-      "mp4": "https://github.com/inematds/formacao-fth-sim2real-v72/releases/download/videos-v1/real2sim-pegar-cubo.mp4",
+      "mp4": "https://github.com/linnoff88-dev/formacao-fth-sim2real-v72/releases/download/videos-v1/real2sim-pegar-cubo.mp4",
       "poster": "assets/video/real2sim-poster.jpg",
       "vtt": "assets/video/real2sim.vtt",
-      "pagina": "https://inematds.github.io/robotica-real2sim/guia/"
+      "pagina": "https://linnoff88-dev.github.io/arckhe-/guia/"
     }
   },
   "inicio": {
@@ -33,7 +33,7 @@
     "cta": "Empezar por la clase 1",
     "cta2": {
       "t": "Ver el kit en GitHub",
-      "href": "https://github.com/inematds/formacao-fth-sim2real-v72"
+      "href": "https://github.com/linnoff88-dev/formacao-fth-sim2real-v72"
     },
     "capa_alt": "Robot humanoide industrial de pie sobre el suelo de un laboratorio oscuro, sujeto a un pórtico por un cable flojo, con un monitor de simulación al fondo y el título Del simulador al suelo.",
     "numeros": [
